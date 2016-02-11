@@ -1,0 +1,46 @@
+<header class="fill-width ratio ratio--5-2">
+  <img src="/bg_camera.jpg">
+  <div class="pos-absolute bg-maroon-transparent fill-width fill-height pos-top pos-left padding-top-xxlarge text-center row">
+    <div class="col small-centered small-1-1 medium-2-3 large-1-3">
+      <h1 class="head-1 text--white margin-vert-large">A Taste of Cinema History</h1>
+      <div class="head-2 text--white">
+        <p class="margin-bottom-medium">We are indebted to the early pioneers and innovators of the moving image.</p>
+        <p>Welcome to Wintergarten, named after the first public movie theater in history — a place to be inspired by filmmakers from the early days of cinema.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <nav class="row margin-top-large padding-horz-large margin-horz-medium">
+    <div class="col small-1-1 medium-1-2 text-left">
+      <select class="btn-dropdown-white">
+        <option>Date of Release</option>
+        <option>Alphabetical</option>
+      </select>
+    </div>
+    <div class="col small-1-1 medium-1-2 text-right">
+      <span class="text-1 margin-right-medium">Demo Site on Github</span>
+      <a href="#" class="btn-gray btn--small icon--left icon-github margin-right-small">NodeJS</a>
+      <a href="#" class="btn-gray btn--small icon--left icon-github">PHP</a>
+    </div>
+  </nav>
+
+<ul class="row padding-large">
+  {{#each collections_items}}
+    <li class="col small-1-1 medium-1-2 large-1-4 padding-medium">
+      <h3 class="head-3 margin-bottom-small truncate">{{ name }}</h3>
+      <a href="/watch/{{ id }}" class="ratio ratio--16-9">
+        <img src="{{ thumbnail.medium }}" class="fill-width">
+      </a>
+      <div class="is-hidden">
+        {{ description }}
+      </div>
+    </li>
+  {{/each}}
+</ul>
+
+<div class="modals">
+  {{> modals/join }}
+  {{> modals/login }}
+</div>

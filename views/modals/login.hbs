@@ -1,0 +1,27 @@
+<div class="modal--container is-active" data-component="modal-login">
+  <div class="modal--body">
+    <header class="text-center">
+      <i class="icon-wintergarten-black icon--xlarge"></i>
+      <h2 class="margin-top-small margin-bottom-medium"><i class="symbol-wintergarten-black"></i></h2>
+    </header>
+
+    <form action="/login" method="post" class="form">
+      <fieldset class="margin-vert-medium">
+        <label>Email</label>
+        <input type="text" name="customer[email]" value="{{ random_email }}">
+      </fieldset>
+      <fieldset class="margin-vert-medium">
+        <label>Password</label>
+        <input type="password" value="password">
+      </fieldset>
+
+      <fieldset class="modal--actions margin-vert-large text-center">
+        <button type="submit" class="btn-maroon btn--large">Login</button>
+      </fieldset>
+    </form>
+
+      <button data-prop="close" class="modal--close icon icon--center icon-x-black">x</button>
+  </div>
+
+  <div class="modal--bg bg-white-transparent"></div>
+</div>
