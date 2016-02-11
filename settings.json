@@ -2,7 +2,7 @@
   "apps" : [
     {
       "name"        : "vhx-node-demo",
-      "script"      : "app.js",
+      "script"      : "core/app.js",
       "watch"       : true
     }
   ]

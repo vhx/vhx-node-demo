@@ -28,5 +28,5 @@
     "less": "^2.6.0",
     "node-minify": "^1.3.7"
   },
-  "main": "app.js"
+  "main": "core/app.js"
 }
