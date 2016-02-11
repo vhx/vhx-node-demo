@@ -1,0 +1,6 @@
+logs
+.env
+node_modules
+data
+assets
+scripts
