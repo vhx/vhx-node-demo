@@ -1,0 +1,19 @@
+<section data-component="watch-unauthorized" class="border radius margin-top-xxlarge row">
+  <div class="small-centered small-1-1 medium-1-2 large-1-3 padding-large">
+    <header class="text-center margin-bottom-large">
+      <i class="icon-camera-black icon--xlarge"></i>
+      <h2 class="margin-top-small margin-bottom-medium"><i class="symbol-wintergarten-black"></i></h2>
+    </header>
+
+    <div class="text-center">
+      <h4 class="head-2 margin-bottom-small">Unauthorized</h4>
+      <p class="text-3">You must log in with an account to view subscription content</p>
+
+      <button href="/login" class="btn-white btn--large margin-top-medium" data-modal-open="login">Login</button>
+    </div>
+  </div>
+</section>
+
+<div class="modals">
+  {{> modals/login }}
+</div>
