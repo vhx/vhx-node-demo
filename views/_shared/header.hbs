@@ -1,0 +1,15 @@
+<nav class="row padding-small pos-absolute pos-top pos-left z-high fill-width">
+  <div class="col small-1-1 medium-1-2 padding-left-small text-left">
+    <a href="/"><i class="icon-camera-white icon--large"></i><i class="symbol-wintergarten-white"></i></a>
+  </div>
+
+  {{#if logged_in}}
+  <div class="col small-1-1 medium-1-2 padding-right-medium text-right">
+    <a href="/logout" class="padding-top-small">Log Out</a>
+  {{else}}
+  <ul class="col small-1-1 medium-1-2 padding-right-medium text-right list-inline">
+    <li><a class="text--white text--bold margin-right-medium" href="/join" data-modal-open="join">Join</a></li>
+    <li><a class="text--white text--bold" href="/login" data-modal-open="login">Login</a></li>
+  </ul>
+  {{/if}}
+</nav>
