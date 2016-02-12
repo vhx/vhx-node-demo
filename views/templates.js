@@ -14,7 +14,6 @@ const fs          = require('fs');
 const path        = require('path');
 const views_dir   = path.join(__dirname);
 
-
 /* Register Views as Partials
 ..............................*/
 walk.walkSync(views_dir, function(base_dir, filename) {
@@ -29,17 +28,22 @@ walk.walkSync(views_dir, function(base_dir, filename) {
 
 /* Template Rendering
 ..............................*/
-const Template = function(response, obj) {
+const Template = function(req, res, obj) {
   let layout = handlebars.compile(fs.readFileSync(views_dir + '/layouts/' + obj.layout + '.hbs').toString());
   let data = _.isObject(obj.data) ? obj.data : {};
 
   data.yield = obj.yield;
-  data.random_email = 'customer' + random.generate(12) +  '@vhx.tv';
+  data.random_email = 'customer+' + random.generate(12) +  '@vhx.tv';
+  data.logged_in = (req.session.customer_href) ? true : false;
+  data.current_path = req.path;
+  data.customer = {
+    email: req.session.customer_email
+  };
   data.config = {
     typekit_id: process.env.TYPEKIT_ID
   };
 
-  response.send(layout(data));
+  res.send(layout(data));
 };
 
 module.exports = Template;
