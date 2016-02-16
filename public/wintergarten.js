@@ -5,15 +5,23 @@ $(function() {
 
   self.init = function() {
     self.bindModals();
+    self.bindForms();
+  };
+
+  self.bindForms = function() {
+    $('form').on('submit', function() {
+      $(this).find('button').addClass('is-processing');
+    });
   };
 
   self.bindModals = function() {
     $('[data-modal-open]').on('click', function(event) {
       var name = $(this).data('modal-open');
+      var redirect = self.getRedirect($(this));
 
       event.preventDefault();
 
-      self.openModal(name);
+      self.openModal(name, redirect);
 
     });
 
@@ -28,9 +36,13 @@ $(function() {
     });
   };
 
-  self.openModal = function(name) {
+  self.openModal = function(name, redirect) {
     var modal = $('[data-component="modal-' + name + '"]');
+    var form = modal.find('form');
 
+    if (redirect.indexOf('watch') >= 0 && form.length) {
+      form.append('<input type="hidden" name="redirect" value="' + redirect + '">');
+    }
     if (!modal.hasClass('is-active')) {
       modal.addClass('is-active');
     }
@@ -38,10 +50,21 @@ $(function() {
 
   self.closeModals = function() {
     var modal = $('.modal--container');
+    var form = modal.find('form');
 
+    if (form.length) {
+      form.find('[name=redirect]').remove();
+    }
     if (modal.hasClass('is-active')) {
       modal.removeClass('is-active');
     }
+  };
+
+  self.getRedirect = function(el) {
+    var parser = document.createElement('a');
+    parser.href = el.prop('href');
+
+    return parser.pathname;
   };
 
   self.init();

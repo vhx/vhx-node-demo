@@ -68,6 +68,8 @@ app.get('/join', function(req, res) {
 });
 
 app.post('/join', function(req, res) {
+  let redirect = req.body.redirect ? req.body.redirect : '/';
+console.log(req.body);
   if (req.body.customer) {
     vhx.customers.create({
       name: req.body.customer.name,
@@ -75,7 +77,7 @@ app.post('/join', function(req, res) {
       product: 'https://api.vhx.tv/products/14444'
     }, function(err, customer) {
       req.session.customer_href = 'https://api.vhx.tv/customers/' + customer.id;
-      res.send('well done');
+      res.redirect(redirect);
     });
   }
 });
@@ -94,7 +96,7 @@ app.post('/login', function(req, res) {
   ..................................... */
   req.session.customer_href = 'https://api.vhx.tv/customers/2041092';
   req.session.customer_email = req.body.customer.email;
-  
+
   let url = req.query.redirect ? req.query.redirect : '/';
   res.redirect(url);
 });
@@ -103,6 +105,12 @@ app.get('/login', function(req, res) {
   template(req, res, {
     layout: 'layout',
     yield: 'modals/login'
+  });
+});
+
+app.get('/logout', function(req, res) {
+  req.session.destroy(function() {
+    res.redirect('/');
   });
 });
 
