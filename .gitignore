@@ -4,3 +4,4 @@ node_modules
 assets
 public/.jshintrc
 .elasticbeanstalk
+server
