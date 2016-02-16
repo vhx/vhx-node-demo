@@ -1,13 +1,12 @@
-<section class="row" style="background-image: url('/bg_camera.jpg');">
-  <div class="small-centered text-center padding-vert-xxlarge" style="background: rgba(20,7,2,.9);">
-    <iframe src="{{authorization.player.host}}{{authorization.player.path}}?color=804732&autoplay=1&sharing=0&authorization={{authorization.token}}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen style="height: 500px;  width: 650px;"></iframe>
+<section class="row bg-cover bg-camera">
+  <div class="small-centered text-center padding-vert-large ratio ratio--5-2 bg-sepia">
+    <iframe src="{{authorization.player.host}}{{authorization.player.path}}?color=804732&autoplay=1&sharing=0&authorization={{authorization.token}}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen style="width: 80%; margin: auto; height: 550px;"></iframe>
   </div>
 </section>
 
 <section class="small-centered small-1-1 medium-1-2 padding-top-large">
   <header class="row margin-vert-medium">
     <h2 class="col small-1-1 medium-1-2 head-2 text-left">{{authorization._embedded.video.title}}</h2>
-    <p class="col small-1-1 medium-1-2 text-right"><button class="btn-white">Download</button></p>
   </header>
   <div class="text-3">{{{authorization._embedded.video.description}}}</div>
 </section>
