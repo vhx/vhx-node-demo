@@ -1,6 +1,10 @@
 <section class="row bg-cover bg-camera">
   <div class="small-centered text-center padding-vert-large ratio ratio--5-2 bg-sepia">
-    <iframe src="{{authorization.player.host}}{{authorization.player.path}}?color=804732&autoplay=1&sharing=0&authorization={{authorization.token}}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen style="width: 80%; margin: auto; height: 550px;"></iframe>
+    <div data-component="player">
+      <div class="ratio ratio--5-2">
+        <iframe src="{{authorization.player.host}}{{authorization.player.path}}?color=804732&autoplay=1&sharing=0&authorization={{authorization.token}}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      </div>
+    </div>
   </div>
 </section>
 
