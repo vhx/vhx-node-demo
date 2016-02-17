@@ -15,7 +15,6 @@
     "express-session": "1.x",
     "fs-walk": "0.0.1",
     "handlebars": "^3.0.3",
-    "mongodb": "2.x",
     "path": "^0.12.7",
     "randomstring": "^1.1.4",
     "underscore": "^1.8.3",
