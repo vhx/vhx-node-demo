@@ -20,7 +20,7 @@
       {{#each items}}
       <li class="col small-1-1 medium-1-2 large-1-4 padding-medium" data-component="item">
         <h3 class="head-3 margin-bottom-small truncate">{{ name }}</h3>
-        <a href="/watch/{{ id }}" class="ratio ratio--16-9" {{#unless ../logged_in}}data-modal-open="join"{{/unless}}>
+        <a href="/watch/{{ id }}" class="ratio ratio--16-9" {{#unless ../../logged_in}}data-modal-open="join"{{/unless}}>
           <img src="{{ thumbnail.medium }}" class="fill-width">
         </a>
         <div class="is-hidden">
