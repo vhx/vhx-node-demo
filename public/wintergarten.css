@@ -2591,20 +2591,6 @@ html.sticky-footer footer {
 .form textarea:-ms-input-placeholder {
   color: #dbdbdb;
 }
-.form input[type="text"][disabled],
-.form input[type="email"][disabled],
-.form input[type="tel"][disabled],
-.form input[type="password"][disabled],
-.form input[type="number"][disabled],
-.form textarea[disabled],
-.form input[type="text"].is-disabled,
-.form input[type="email"].is-disabled,
-.form input[type="tel"].is-disabled,
-.form input[type="password"].is-disabled,
-.form input[type="number"].is-disabled,
-.form textarea.is-disabled {
-  opacity: 0.5;
-}
 .form input[type="text"].is-error,
 .form input[type="email"].is-error,
 .form input[type="tel"].is-error,
@@ -2971,6 +2957,10 @@ i.icon--xlarge {
 }
 .icon-vhx-white {
   background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2249.7%22%20height%3D%2220.1%22%20viewBox%3D%220%200%2049.7%2020.1%22%3E%3Cpath%20d%3D%22M25.4%2012.2c.3%200%20.7-.2.8-.5l1.5-2.4v9.3c0%20.3.2.5.5.5h8c.3%200%20.7-.2.8-.5l3.1-4.8%203.2%204.8c.2.2.5.5.8.5H48c.3%200%20.4-.2.2-.5L42.6%2010l5.6-8.6c.2-.2.1-.4-.2-.4h-3.8c-.3%200-.7.2-.8.5l-3.2%204.8-3.1-4.8c-.1-.3-.5-.5-.8-.5h-8c-.3%200-.5.2-.5.5V8h-5.3c-.3%200-.5-.2-.5-.5V1.6c0-.3-.2-.5-.5-.5H14c-.3%200-.6.2-.7.5L9.5%2012.3%205.9%201.5c-.1-.3-.4-.5-.7-.5H1.8c-.3%200-.5.2-.4.5l5.7%2017.1c.1.3.4.5.7.5h3.4c.3%200%20.6-.2.7-.5l5.7-17.1v17c0%20.3.2.5.5.5h3.1c.3%200%20.5-.2.5-.5v-5.9c0-.3.2-.5.5-.5h3.2zm6.6%206.4v-17l5.7%208.5-5.7%208.5z%22%20fill%3D%22%23ffffff%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+}
+.icon-visa {
+  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2228.93%22%20height%3D%2216.94%22%20viewBox%3D%220%200%2028.93%2016.94%22%3E%3Ctitle%3Evisa%3C%2Ftitle%3E%3Cpolyline%20points%3D%220%204.21%2028.93%204.21%2028.93%200%200%200%200%204.21%22%20fill%3D%22%23565abc%22%2F%3E%3Cpolyline%20points%3D%220%2016.94%2028.93%2016.94%2028.93%2012.72%200%2012.72%200%2016.94%22%20fill%3D%22%23ffa336%22%2F%3E%3Cpath%20d%3D%22M10.67%2C13h1.48l-4%2C6.54H6.37L6.21%2C14.39a1.74%2C1.74%2C0%2C0%2C0-.1-0.67%2C0.86%2C0.86%2C0%2C0%2C0-.41-0.41%2C1.44%2C1.44%2C0%2C0%2C0-.64-0.14V13H7.95l0.14%2C4.45L10.67%2C13%22%20transform%3D%22translate%28-0.53%20-7.59%29%22%20fill%3D%22%23565abc%22%2F%3E%3Cpolyline%20points%3D%2211.9%2011.97%2013.97%205.43%2012.13%205.43%2010.06%2011.97%2011.9%2011.97%22%20fill%3D%22%23565abc%22%2F%3E%3Cpath%20d%3D%22M13.51%2C19a2.09%2C2.09%2C0%2C0%2C0%2C1.13.58%2C4.93%2C4.93%2C0%2C0%2C0%2C1.71%2C0%2C3.59%2C3.59%2C0%2C0%2C0%2C1.54-.6%2C2%2C2%2C0%2C0%2C0%2C.74-1.14%2C1.61%2C1.61%2C0%2C0%2C0-.13-1.27%2C3.53%2C3.53%2C0%2C0%2C0-1.09-.88%2C2.25%2C2.25%2C0%2C0%2C1-.83-0.74%2C0.7%2C0.7%2C0%2C0%2C1%2C.07-0.74%2C0.94%2C0.94%2C0%2C0%2C1%2C.71-0.29%2C3.11%2C3.11%2C0%2C0%2C1%2C1%2C.11%2C2%2C2%2C0%2C0%2C1%2C.75.38l0.61-1A2.86%2C2.86%2C0%2C0%2C0%2C18.62%2C13a5.52%2C5.52%2C0%2C0%2C0-1.56-.14%2C2.72%2C2.72%2C0%2C0%2C0-1.34.44%2C2.64%2C2.64%2C0%2C0%2C0-.91%2C1%2C1.63%2C1.63%2C0%2C0%2C0-.11%2C1.19%2C2%2C2%2C0%2C0%2C0%2C.67.9%2C7.13%2C7.13%2C0%2C0%2C0%2C.83.51%2C1.63%2C1.63%2C0%2C0%2C1%2C.59.53%2C0.59%2C0.59%2C0%2C0%2C1%2C0%2C.65%2C1.23%2C1.23%2C0%2C0%2C1-.79.42%2C2.51%2C2.51%2C0%2C0%2C1-1.11-.1%2C3%2C3%2C0%2C0%2C1-1-.52L13.51%2C19%22%20transform%3D%22translate%28-0.53%20-7.59%29%22%20fill%3D%22%23565abc%22%2F%3E%3Cpath%20d%3D%22M20.39%2C18l-0.83%2C1.51H18.08L22%2C13H23.7l0.56%2C6.54H22.52L22.4%2C18h-2m1.75-3.18L20.86%2C17.2h1.47l-0.19-2.32%22%20transform%3D%22translate%28-0.53%20-7.59%29%22%20fill%3D%22%23565abc%22%2F%3E%3C%2Fsvg%3E');
   background-repeat: no-repeat;
 }
 .symbol-wintergarten-black {
@@ -3375,15 +3365,15 @@ Sticker
 [data-component="vhx-sticker"]:after {
   content: ' ';
   display: block;
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   top: 0;
   right: 0;
   transform: rotate(45deg);
   background: #F5A623;
   position: absolute;
-  top: -80px;
-  right: -80px;
+  top: -60px;
+  right: -60px;
   z-index: 0;
 }
 /*.....................................
@@ -3435,4 +3425,38 @@ Callouts
   border-color: transparent transparent #FEF1DC #FEF1DC;
   bottom: -30px;
   left: 50%;
+}
+[data-prop="action-join"] .icon-visa {
+  position: absolute;
+  right: 10px;
+  top: 37px;
+}
+[data-prop="action-join"] [data-expiry] .col:last-child:before {
+  content: '/';
+  position: absolute;
+  top: 11px;
+  left: -9px;
+}
+[data-prop="action-join"] [data-card-number] {
+  letter-spacing: 1px;
+}
+[data-prop="action-join"] [data-expiry-month] {
+  text-align: center;
+  border-right: none !important;
+  -webkit-border-radius: 3px 0px 0px 3px !important;
+  -webkit-background-clip: padding-box !important;
+  -moz-border-radius: 3px 0px 0px 3px !important;
+  -moz-background-clip: padding !important;
+  border-radius: 3px 0px 0px 3px !important;
+  background-clip: padding-box !important;
+}
+[data-prop="action-join"] [data-expiry-year] {
+  text-align: center;
+  border-left: none !important;
+  -webkit-border-radius: 0px 3px 3px 0px !important;
+  -webkit-background-clip: padding-box !important;
+  -moz-border-radius: 0px 3px 3px 0px !important;
+  -moz-background-clip: padding !important;
+  border-radius: 0px 3px 3px 0px !important;
+  background-clip: padding-box !important;
 }
