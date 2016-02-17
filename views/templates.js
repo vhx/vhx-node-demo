@@ -26,24 +26,34 @@ walk.walkSync(views_dir, function(base_dir, filename) {
   }
 });
 
+/* Template Helper Data
+.................................*/
+const getTemplateHelperData = function(req, obj) {
+  return {
+    yield: obj.yield,
+    random_email: 'customer+' + random.generate(12) +  '@vhx.tv',
+    logged_in: (req.session.customer_href) ? true : false,
+    current_path: req.path,
+    hasBack: (obj.yield.indexOf('watch') >= 0) ? true : false,
+    hasFooter: (!obj.yield.match(/unauthorized|modals/)) ? true : false,
+    hasModals: (obj.yield === 'home/home') ? true : false,
+    customer: {
+      email: req.session.customer_email
+    },
+    config: {
+      typekit_id: process.env.TYPEKIT_ID
+    }
+  };
+};
+
 /* Template Rendering
 ..............................*/
 const Template = function(req, res, obj) {
   let layout = handlebars.compile(fs.readFileSync(views_dir + '/layouts/' + obj.layout + '.hbs').toString());
-  let data = _.isObject(obj.data) ? obj.data : {};
-
-  data.yield = obj.yield;
-  data.random_email = 'customer+' + random.generate(12) +  '@vhx.tv';
-  data.logged_in = (req.session.customer_href) ? true : false;
-  data.current_path = req.path;
-  data.customer = {
-    email: req.session.customer_email
-  };
-  data.config = {
-    typekit_id: process.env.TYPEKIT_ID
-  };
+  let data = _.extend({}, getTemplateHelperData(req, obj), obj.data);
 
   res.send(layout(data));
 };
+
 
 module.exports = Template;
