@@ -1920,6 +1920,114 @@ html.sticky-footer footer {
   -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
 }
+.btn-yellow {
+  display: inline-block;
+  padding: 0px 15px;
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "europa", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-color: transparent;
+  -webkit-transition: background-color 200ms ease-in-out, border 200ms ease-in-out;
+  -moz-transition: background-color 200ms ease-in-out, border 200ms ease-in-out;
+  -o-transition: background-color 200ms ease-in-out, border 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out, border 200ms ease-in-out;
+  color: #ffffff;
+  background-color: #F5A623;
+  border-color: #d08200;
+}
+.btn-yellow:link,
+.btn-yellow:visited {
+  text-decoration: none;
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn-yellow:hover,
+.btn-yellow.is-hover {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn-yellow:focus,
+.btn-yellow.is-focus {
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn-yellow:active,
+.btn-yellow.is-active {
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn-yellow.icon--left {
+  background-position: 17px center;
+  padding-left: 40px;
+}
+.btn-yellow.icon--right {
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+.btn-yellow.icon--center {
+  padding: 0 19px;
+}
+.btn-yellow.btn--borderless {
+  border-width: 0px !important;
+}
+.btn-yellow:link,
+.btn-yellow:visited {
+  background-color: #F5A623;
+  border-color: #d08200;
+  color: #ffffff;
+}
+.btn-yellow:hover,
+.btn-yellow.is-hover,
+.btn-yellow:focus,
+.btn-yellow.is-focus {
+  color: #ffffff;
+  background-color: #F5A623;
+  border-color: #d08200;
+}
+.btn-yellow:active,
+.btn-yellow.is-active {
+  color: #ffffff;
+  background-color: #d08200;
+  border-color: #d08200;
+}
+.btn-yellow.is-processing {
+  color: transparent;
+  position: relative;
+}
+.btn-yellow.is-processing:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  background-size: 30px 30px;
+  background-position: center center;
+  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2230%22%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%3E%3Ctitle%3Eloader%3C%2Ftitle%3E%3Cpath%20d%3D%22M15%2C0.07A14.93%2C14.93%2C0%2C1%2C0%2C29.93%2C15%2C14.93%2C14.93%2C0%2C0%2C0%2C15%2C.07Zm8.07%2C7.52A3.07%2C3.07%2C0%2C1%2C1%2C20%2C10.66%2C3.07%2C3.07%2C0%2C0%2C1%2C23.07%2C7.59Zm-16.14%2C15A3.07%2C3.07%2C0%2C1%2C1%2C10%2C19.5%2C3.07%2C3.07%2C0%2C0%2C1%2C6.93%2C22.58Zm0-8.84A3.07%2C3.07%2C0%2C1%2C1%2C10%2C10.66%2C3.07%2C3.07%2C0%2C0%2C1%2C6.93%2C13.73ZM15%2C27.55a3.07%2C3.07%2C0%2C1%2C1%2C3.07-3.07A3.07%2C3.07%2C0%2C0%2C1%2C15%2C27.55Zm0-19a3.07%2C3.07%2C0%2C1%2C1%2C3.07-3.07A3.07%2C3.07%2C0%2C0%2C1%2C15%2C8.6Zm8.07%2C14a3.07%2C3.07%2C0%2C1%2C1%2C3.07-3.07A3.07%2C3.07%2C0%2C0%2C1%2C23.07%2C22.58Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
 .btn-maroon {
   display: inline-block;
   padding: 0px 15px;
@@ -2673,6 +2781,9 @@ html.sticky-footer footer {
 }
 .bg-camera {
   background-image: url('/bg_camera.jpg');
+}
+.border--bottom {
+  border-bottom: 1px solid rgba(20, 7, 2, 0.2);
 }
 /*.....................................
   ICONS
