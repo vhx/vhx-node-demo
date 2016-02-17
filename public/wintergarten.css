@@ -3148,11 +3148,12 @@ a.text--red:active {
 }
 .modal--container.is-active {
   z-index: 2147483639;
-  position: relative;
-  left: 0;
+  position: absolute;
+  left: 50%;
+  top: 0;
 }
 .modal--container.is-active .modal--body {
-  position: fixed;
+  position: absolute;
   animation: modal-open 200ms ease forwards;
 }
 .modal--container.is-active .modal--bg {
@@ -3165,7 +3166,7 @@ a.text--red:active {
   background: #ffffff;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
-  top: 100px;
+  top: 75px;
   margin-left: -225px;
   position: absolute;
 }
@@ -3245,6 +3246,9 @@ a.text--red:active {
     opacity: 0;
   }
 }
+/*.....................................
+Sticker
+......................................*/
 [data-component="vhx-sticker"] {
   position: relative;
 }
@@ -3294,4 +3298,30 @@ footer {
 [data-component=player] {
   width: 80%;
   margin: 40px auto;
+}
+/*.....................................
+Callouts
+......................................*/
+.callout {
+  background-color: #FEF1DC;
+  border: 1px solid #FBE3B9;
+  position: relative;
+  box-sizing: border-box;
+  padding: 25px;
+  width: 250px;
+  margin: auto;
+}
+.callout:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  box-sizing: border-box;
+  border: 15px solid #FBE3B9;
+  transform-origin: 0 0;
+  transform: rotate(-45deg);
+  margin-left: -15px;
+  border-color: transparent transparent #FEF1DC #FEF1DC;
+  bottom: -30px;
+  left: 50%;
 }

@@ -34,6 +34,13 @@ $(function() {
       event.preventDefault();
       self.closeModals();
     });
+
+    $(window).on('resize', function() {
+      var modals = $('.modal--container.is-active');
+      if (modals.length) {
+        modals.css('top', $(window).scrollTop());
+      }
+    });
   };
 
   self.openModal = function(name, redirect) {
@@ -44,6 +51,7 @@ $(function() {
       form.append('<input type="hidden" name="redirect" value="' + redirect + '">');
     }
     if (!modal.hasClass('is-active')) {
+      modal.css('top', $(window).scrollTop());
       modal.addClass('is-active');
     }
   };
