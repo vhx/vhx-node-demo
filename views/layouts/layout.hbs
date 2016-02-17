@@ -7,11 +7,22 @@
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
-  {{> _shared/header }}
 
-  {{> (lookup . 'yield') }}
+  <div data-component="layout" class="pos-relative overflow-hidden">
+    {{> _shared/header }}
+    {{> (lookup . 'yield') }}
+  </div>
 
-  {{> _shared/footer }}
+  {{#if hasFooter}}
+    {{> _shared/footer }}
+  {{/if}}
+
+  {{#if hasModals}}
+    <div class="modals">
+      {{> modals/join }}
+      {{> modals/login }}
+    </div>
+  {{/if}}
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="/wintergarten.js"></script>
