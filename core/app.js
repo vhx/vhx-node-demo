@@ -6,6 +6,7 @@ require('dotenv').load();
 
 /* Packages
 ..............................*/
+const async       = require('async');
 const express     = require('express');
 const session     = require('express-session');
 const cookie      = require('cookie-parser');
@@ -39,25 +40,49 @@ app.use(session({
 ..................................... */
 app.get('/', function(req, res) {
 
-  /* VHX > List Collection Items
-  .....................................
-  a call to vhx.collections to get back our collection items
-  http://dev.vhx.tv/docs/api/?javascript#collection-items-list
-  ..................................... */
 
-  // 3 collections each with 4 items
-  vhx.collections.listItems({
-    collection: 'https://api.vhx.tv/collections/1896',
-    product: 'https://api.vhx.tv/products/14444'
-  }, function(err, collections) {
-    template(req, res, {
-      layout: 'layout',
-      yield: 'home/home',
-      data: {
-        collections_items: collections._embedded.items
-      }
+  let data = [];
+
+  /* VHX > List Collections
+  .....................................
+  a call to vhx.collections to get back our collections
+  http://dev.vhx.tv/docs/api/?javascript#collection-list
+  ..................................... */
+  vhx.collections.all({}, function(err, all_collections) {
+
+    async.eachSeries(all_collections._embedded.collections, function(collection, callback) {
+
+      /* VHX > List Collection Items
+      .....................................
+      we then interate over each collection and use its href to get
+      back our collection items
+      http://dev.vhx.tv/docs/api/?javascript#collection-items-list
+      ..................................... */
+      vhx.collections.listItems({
+        collection: collection._links.self.href,
+        product: 'https://api.vhx.tv/products/14444'
+      }, function(err, items) {
+        data.push({
+          name: collection.name,
+          items: items._embedded.items
+        });
+
+        // Next Iteration
+        callback();
+      });
+
+    // Complete Callback
+    }, function() {
+      template(req, res, {
+        layout: 'layout',
+        yield: 'home/home',
+        data: {
+          collections: data
+        }
+      });
     });
   });
+
 });
 
 app.get('/join', function(req, res) {
@@ -69,7 +94,7 @@ app.get('/join', function(req, res) {
 
 app.post('/join', function(req, res) {
   let redirect = req.body.redirect ? req.body.redirect : '/';
-console.log(req.body);
+
   if (req.body.customer) {
     vhx.customers.create({
       name: req.body.customer.name,
@@ -144,7 +169,6 @@ app.get('/watch/:video_id', function(req, res) {
         yield: 'watch/unauthorized'
       });
     } else {
-      console.log(authorization);
       template(req, res, {
         layout: 'layout',
         yield: 'watch/player',
