@@ -8,34 +8,35 @@
     <form action="/join" method="post" class="form" data-prop="action-join">
       <fieldset class="margin-vert-medium">
         <label class="block margin-bottom-small">Email</label>
-        <input type="email" name="customer[email]" value="{{ random_email }}" class="fill-width">
+        <input type="email" name="customer[email]" value="{{ random_email }}" class="fill-width" disabled>
       </fieldset>
       <fieldset class="margin-vert-medium">
         <label class="block margin-bottom-small">Full Name</label>
-        <input type="text" name="customer[name]" value="Customer Name" class="fill-width">
+        <input type="text" name="customer[name]" value="Customer Name" class="fill-width" disabled>
       </fieldset>
-      <fieldset class="margin-vert-medium">
+      <fieldset class="margin-vert-medium pos-relative">
         <label class="block margin-bottom-small">Credit Card Number</label>
-        <input type="text" value="4111 1111 1111 1111" class="fill-width">
+        <i class="icon-visa icon--medium"></i>
+        <input data-card-number type="text" value="4111 1111 1111 1111" class="fill-width" disabled>
       </fieldset>
 
       <div class="row margin-vert-medium">
-        <fieldset class="col small-1-1 medium-1-3 padding-right-small">
+        <fieldset class="col small-1-1 medium-1-3 padding-right-small" data-expiry>
           <label class="block margin-bottom-small">Expiration</label>
           <div class="col small-1-2">
-            <input type="number" value="12">
+            <input data-expiry-month type="number" value="12" disabled>
           </div>
-          <div class="col small-1-2">
-            <input type="number" value="19">
+          <div class="col small-1-2 pos-relative">
+            <input data-expiry-year type="number" value="19" disabled>
           </div>
         </fieldset>
         <fieldset class="col small-1-1 medium-1-3 padding-horz-small">
           <label class="block margin-bottom-small">CVC</label>
-          <input type="number" value="123">
+          <input type="number" value="123" disabled>
         </fieldset>
         <fieldset class="col small-1-1 medium-1-3 padding-left-small">
           <label class="block margin-bottom-small">Postal Code</label>
-          <input type="number" value="12345">
+          <input type="number" value="12345" disabled>
         </fieldset>
       </div>
 
