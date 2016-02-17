@@ -22,10 +22,8 @@
     "uuid": "^2.0.1",
     "vhx": "^1.2.0"
   },
-  "devDependencies": {
-    "chalk": "^1.1.1",
-    "less": "^2.6.0",
-    "node-minify": "^1.3.7"
+  "scripts": {
+    "start": "node core/app.js"
   },
   "main": "core/app.js"
 }
