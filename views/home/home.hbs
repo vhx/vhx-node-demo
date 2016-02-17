@@ -11,30 +11,23 @@
   </div>
 </header>
 
+{{> _shared/github }}
 
-  <nav class="row margin-top-large padding-horz-large margin-horz-medium">
-    <div class="col small-1-1 medium-1-2 text-left">
-      <select class="btn-dropdown-white">
-        <option>Date of Release</option>
-        <option>Alphabetical</option>
-      </select>
-    </div>
-    <div class="col small-1-1 medium-1-2 text-right">
-      <span class="text-1 margin-right-medium">Demo Site on Github</span>
-      <a href="https://github.com/vhx/vhx-node-demo" class="btn-gray btn--small icon--left icon-github-white icon--small margin-right-small">NodeJS</a>
-    </div>
-  </nav>
-
-<ul class="row padding-large" data-component="collections">
-  {{#each collections_items}}
-    <li class="col small-1-1 medium-1-2 large-1-4 padding-medium" data-component="item">
-      <h3 class="head-3 margin-bottom-small truncate">{{ name }}</h3>
-      <a href="/watch/{{ id }}" class="ratio ratio--16-9" {{#unless ../logged_in}}data-modal-open="join"{{/unless}}>
-        <img src="{{ thumbnail.medium }}" class="fill-width">
-      </a>
-      <div class="is-hidden">
-        {{ description }}
-      </div>
-    </li>
+<section data-component="collections" class="padding-large">
+  {{#each collections}}
+    <h2 class="margin-left-medium padding-bottom-small head-2 border border--bottom">{{ name }}</h2>
+    <ul class="row padding-bottom-large">
+      {{#each items}}
+      <li class="col small-1-1 medium-1-2 large-1-4 padding-medium" data-component="item">
+        <h3 class="head-3 margin-bottom-small truncate">{{ name }}</h3>
+        <a href="/watch/{{ id }}" class="ratio ratio--16-9" {{#unless ../logged_in}}data-modal-open="join"{{/unless}}>
+          <img src="{{ thumbnail.medium }}" class="fill-width">
+        </a>
+        <div class="is-hidden">
+          {{ description }}
+        </div>
+      </li>
+      {{/each}}
+    </ul>
   {{/each}}
-</ul>
+</section>
