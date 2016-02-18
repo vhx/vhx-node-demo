@@ -3462,3 +3462,44 @@ Callouts
   border-radius: 0px 3px 3px 0px !important;
   background-clip: padding-box !important;
 }
+@media only screen and (max-width: 639px) {
+  [data-component="banner"] .padding-top-xxlarge {
+    padding-top: 20px !important;
+  }
+  [data-component="banner"] .hide-for-medium-below {
+    display: none;
+  }
+  [data-component="banner"] .head-1 {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+  [data-component="banner"] .head-2 {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 641px) and (max-width: 999px) {
+  [data-component="banner"] .head-1 {
+    margin-bottom: 10px;
+  }
+  [data-component="banner"] .head-2 {
+    font-size: 18px;
+  }
+  [data-component="banner"] .hide-for-medium-below {
+    display: none;
+  }
+}
+@media only screen and (min-width: 641px) {
+  [data-component="banner"] .padding-top-xxlarge {
+    padding-top: 40px !important;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  [data-component="banner"] .padding-top-xxlarge {
+    padding-top: 60px !important;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  [data-component="banner"] .padding-top-xxlarge {
+    padding-top: 100px !important;
+  }
+}
