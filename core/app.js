@@ -54,8 +54,10 @@ app.get('/', function(req, res) {
 
       /* VHX > List Collection Items
       .....................................
-      we then interate over each collection and use its href to get
-      back our collection items
+      We then interate over each collection and use its href to get
+      back our collection items. Using async's eachSeries method
+      allows us to do this sychronously until we trigger the next
+      iteration by via the provided callback
       http://dev.vhx.tv/docs/api/?javascript#collection-items-list
       ..................................... */
       vhx.collections.listItems({
@@ -67,11 +69,15 @@ app.get('/', function(req, res) {
           items: items._embedded.items
         });
 
-        // Next Iteration
         callback();
       });
 
-    // Complete Callback
+    /* DEMO > Complete Callback
+    .....................................
+    Render the collections data received back
+    from the series of VHX API calls into the
+    view using handlebars (see templates.js)
+    ..................................... */
     }, function() {
       template(req, res, {
         layout: 'layout',
@@ -85,17 +91,29 @@ app.get('/', function(req, res) {
 
 });
 
-app.get('/join', function(req, res) {
-  template(res, {
-    layout: 'layout',
-    yield: 'modals/join'
-  });
-});
-
 app.post('/join', function(req, res) {
   let redirect = req.body.redirect ? req.body.redirect : '/';
 
+  /* DEMO > Payment and Account Authorization
+  .....................................
+  For the sake of this demo site, no actual payment information is
+  is collected or authorized. For payments, we recommend using Stripe's
+  payment api (http://stripe.com). We also mock login the user by
+  creating a session with the customer vhx href. You'd save this href in
+  your DB, along with any other user account info (i.e. username/password).
+  For user account authorization we recommend http://passportjs.org/.
+  ..................................... */
+
   if (req.body.customer) {
+
+    /* VHX > Create Customer
+    .....................................
+    On post of the join form we can create a VHX Customer, associating
+    the customer with our product, which gives the customer access to
+    that project by enabling us to make authorization calls (see below)
+    on line 165 in the /watch route
+    http://http://dev.vhx.tv/docs/api/?javascript#customer-create
+    ..................................... */
     vhx.customers.create({
       name: req.body.customer.name,
       email: req.body.customer.email,
@@ -109,7 +127,7 @@ app.post('/join', function(req, res) {
 
 app.post('/login', function(req, res) {
 
-  /* User Account Authorization
+  /* DEMO > User Account Authorization
   .....................................
   For the sake of this demo site, no actual user authorization
   is implemented. You can authorize your users however you want.
@@ -124,13 +142,6 @@ app.post('/login', function(req, res) {
 
   let url = req.query.redirect ? req.query.redirect : '/';
   res.redirect(url);
-});
-
-app.get('/login', function(req, res) {
-  template(req, res, {
-    layout: 'layout',
-    yield: 'modals/login'
-  });
 });
 
 app.get('/logout', function(req, res) {
