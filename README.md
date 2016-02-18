@@ -9,11 +9,11 @@ To take a deeper look at the ins and outs of the demo site, or to use it as a st
 
 **Initial Setup**
 
-**1)** Fork the repo  
-**2)** Run `npm install`
+**1)** Fork the repo<br>
+**2)** Run `npm install`<br>
 **3)** Add an `.env` file. The demo site uses the following:
 
-```config
+```
 PORT=1896 // or any available port
 VHX_API_KEY=YOUR_API_KEY // get this from the VHX Platforms Dashboard
 TYPEKIT_ID=YOUR_TYPEKIT_ID // only if you want to use typekit
