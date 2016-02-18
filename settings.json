@@ -1,9 +1,0 @@
-{
-  "apps" : [
-    {
-      "name"        : "vhx-node-demo",
-      "script"      : "core/app.js",
-      "watch"       : true
-    }
-  ]
-}
