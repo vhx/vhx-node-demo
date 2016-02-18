@@ -3358,6 +3358,8 @@ Sticker
 }
 [data-component="vhx-sticker"] .icon-vhx-white {
   width: 35px;
+  position: relative;
+  top: 5px;
 }
 [data-component="vhx-sticker"] .head-5 {
   font-size: 12px;
