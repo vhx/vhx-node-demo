@@ -1,5 +1,5 @@
 # VHX API &mdash; Node Demo Site
-![wintergarten screenshot](https://cloud.githubusercontent.com/assets/447100/13133973/e749929c-d5b5-11e5-9832-a65d1716c1bf.jpg)
+![wintergarten screenshot](https://cloud.githubusercontent.com/assets/447100/13134060/225066d0-d5b7-11e5-9ab4-d0a360b0c6c6.jpg)
 
 A Node.js demo site powered by the VHX API. Read more about the VHX API at our [Developer Docs](http://dev.vhx.tv).
 
