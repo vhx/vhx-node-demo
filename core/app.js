@@ -94,6 +94,12 @@ app.get('/', function(req, res) {
 app.post('/join', function(req, res) {
   let redirect = req.body.redirect ? req.body.redirect : '/';
 
+  // maybe prevent some spam (field should be empty)
+  if (req.body.important.length > 0) {
+    res.redirect('/');
+    return;
+  }
+
   /* DEMO > Payment and Account Authorization
   .....................................
   For the sake of this demo site, no actual payment information is
@@ -126,6 +132,12 @@ app.post('/join', function(req, res) {
 });
 
 app.post('/login', function(req, res) {
+
+  // maybe prevent some spam (field should be empty)
+  if (req.body.important.length > 0) {
+    res.redirect('/');
+    return;
+  }
 
   /* DEMO > User Account Authorization
   .....................................

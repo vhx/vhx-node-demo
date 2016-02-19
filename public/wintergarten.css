@@ -3378,6 +3378,9 @@ Sticker
   right: -60px;
   z-index: 0;
 }
+[name="important"] {
+  display: none;
+}
 /*.....................................
 Sticky Footer
 ......................................*/
