@@ -31,7 +31,7 @@ walk.walkSync(views_dir, function(base_dir, filename) {
 const getTemplateHelperData = function(req, obj) {
   return {
     yield: obj.yield,
-    random_email: 'customer+' + random.generate(12) +  '@vhx.tv',
+    random_email: 'vhx.demo+' + random.generate(12) +  '@gmail.com',
     logged_in: (req.session.customer_href) ? true : false,
     current_path: req.path,
     hasBack: (obj.yield.indexOf('watch') >= 0) ? true : false,
