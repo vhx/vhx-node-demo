@@ -12,10 +12,12 @@
   {{else}}
   <ul class="col small-1-2 padding-top-small padding-right-medium text-right list-inline">
     {{#if hasBack}}
-    <li><a href="/" class="text--white text--bold padding-top-small">< Back to Library</a> <span class="text--bold text--white is-transparent inline padding-horz-small">|</span> </li>
+      <li><a href="/" class="text--white text--bold padding-top-small">< Back to Library</a> <span class="text--bold text--white is-transparent inline padding-horz-small">|</span> </li>
     {{/if}}
     <li><a class="text--white text--bold margin-right-medium" href="/join" data-modal-open="join">Join</a></li>
-    <li><a class="text--white text--bold" href="/login" data-modal-open="login">Login</a></li>
+    {{#unless hasBack}}
+      <li><a class="text--white text--bold" href="/login" data-modal-open="login">Login</a></li>
+    {{/unless}}
   </ul>
   {{/if}}
 </nav>
