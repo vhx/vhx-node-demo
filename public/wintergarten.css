@@ -3262,7 +3262,7 @@ a.text--red:active {
 }
 .modal--container .modal--body {
   animation: modal-close 200ms ease forwards;
-  padding: 35px;
+  padding: 30px;
   width: 450px;
   background: #ffffff;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
@@ -3414,8 +3414,10 @@ Callouts
   position: relative;
   box-sizing: border-box;
   padding: 25px;
-  width: 250px;
-  margin: auto;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  top: -5px;
 }
 .callout:after {
   content: ' ';
