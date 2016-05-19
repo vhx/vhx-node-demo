@@ -50,14 +50,14 @@ app.get('/', function(req, res) {
   ..................................... */
   vhx.collections.all({}, function(err, all_collections) {
 
-    async.eachSeries(all_collections._embedded.collections, function(collection, callback) {
+    async.eachSeries(all_collections._embedded.collections, function(collection, iterator) {
 
       /* VHX > List Collection Items
       .....................................
       We then interate over each collection and use its href to get
       back our collection items. Using async's eachSeries method
       allows us to do this sychronously until we trigger the next
-      iteration by via the provided callback
+      iteration via the provided callback
       http://dev.vhx.tv/docs/api/?javascript#collection-items-list
       ..................................... */
       vhx.collections.listItems({
@@ -68,8 +68,9 @@ app.get('/', function(req, res) {
           name: collection.name,
           items: items._embedded.items
         });
-
-        callback();
+        try {
+          return iterator();
+        } catch (e) {};        
       });
 
     /* DEMO > Complete Callback
