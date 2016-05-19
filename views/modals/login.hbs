@@ -1,23 +1,22 @@
 <div class="modal--container" data-component="modal-login">
   <div class="modal--body">
     <header class="text-center">
-      <i class="icon-camera-black icon--xlarge"></i>
-      <h2 class="margin-top-small margin-bottom-medium"><i class="symbol-wintergarten-black"></i></h2>
+      <i class="icon-camera-black icon--large"></i>
     </header>
 
     <form action="/login?redirect={{ current_path }}" method="post" class="form">
-      <fieldset class="margin-vert-medium">
-        <label class="block margin-bottom-small">Email</label>
+      <fieldset class="margin-vert-small">
+        <label class="block margin-bottom-xsmall">Email</label>
         <input type="text" name="customer[email]" value="{{ random_email }}">
       </fieldset>
-      <fieldset class="margin-vert-medium">
-        <label class="block margin-bottom-small">Password</label>
+      <fieldset class="margin-vert-small">
+        <label class="block margin-bottom-xsmall">Password</label>
         <input type="password" value="password">
       </fieldset>
 
-      <div class="callout margin-top-medium">This is a demo app. You can click Login to go through a mock user experience.</div>
+      <div class="callout margin-top-medium margin-bottom-xsmall">This is a demo app. You can click Login to go through a mock user experience.</div>
 
-      <fieldset class="modal--actions margin-top-large text-center">
+      <fieldset class="modal--actions margin-top-medium text-center">
         <input type="text" name="important">
         <button type="submit" class="btn-maroon btn--large">Login</button>
       </fieldset>
