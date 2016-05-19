@@ -1,28 +1,27 @@
 <div class="modal--container" data-component="modal-join">
   <div class="modal--body">
     <header class="text-center">
-      <i class="icon-camera-black icon--xlarge"></i>
-      <h2 class="margin-top-small margin-bottom-medium"><i class="symbol-wintergarten-black"></i></h2>
+      <i class="icon-camera-black icon--large"></i>
     </header>
 
     <form action="/join" method="post" class="form" data-prop="action-join">
       <fieldset class="margin-vert-medium">
-        <label class="block margin-bottom-small">Email</label>
+        <label class="block margin-bottom-xsmall">Email</label>
         <input type="email" name="customer[email]" value="{{ random_email }}" class="fill-width">
       </fieldset>
       <fieldset class="margin-vert-medium">
-        <label class="block margin-bottom-small">Full Name</label>
+        <label class="block margin-bottom-xsmall">Full Name</label>
         <input type="text" name="customer[name]" value="Customer Name" class="fill-width">
       </fieldset>
       <fieldset class="margin-vert-medium pos-relative">
-        <label class="block margin-bottom-small">Credit Card Number</label>
+        <label class="block margin-bottom-xsmall">Credit Card Number</label>
         <i class="icon-visa icon--medium"></i>
         <input data-card-number type="text" value="4111 1111 1111 1111" class="fill-width">
       </fieldset>
 
       <div class="row margin-vert-medium">
         <fieldset class="col small-1-1 medium-1-3 padding-right-small" data-expiry>
-          <label class="block margin-bottom-small">Expiration</label>
+          <label class="block margin-bottom-xsmall">Expiration</label>
           <div class="col small-1-2">
             <input data-expiry-month type="number" value="12">
           </div>
@@ -31,18 +30,18 @@
           </div>
         </fieldset>
         <fieldset class="col small-1-1 medium-1-3 padding-horz-small">
-          <label class="block margin-bottom-small">CVC</label>
+          <label class="block margin-bottom-xsmall">CVC</label>
           <input type="number" value="123">
         </fieldset>
         <fieldset class="col small-1-1 medium-1-3 padding-left-small">
-          <label class="block margin-bottom-small">Postal Code</label>
+          <label class="block margin-bottom-xsmall">Postal Code</label>
           <input type="number" value="12345">
         </fieldset>
       </div>
 
-      <div class="callout margin-top-medium">This is a demo app. You can click Pay $0 to create a mock user account.</div>
+      <div class="callout margin-top-medium margin-bottom-xsmall">This is a demo app. You can click Pay $0 to create a mock user account.</div>
 
-      <fieldset class="modal--actions margin-top-large text-center">
+      <fieldset class="modal--actions margin-top-medium text-center">
         <input type="text" name="important">
         <button type="submit" class="btn-maroon btn--large">Pay $0 / Mo</button>
       </fieldset>
