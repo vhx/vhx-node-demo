@@ -12,8 +12,9 @@ const session     = require('express-session');
 const cookie      = require('cookie-parser');
 const parser      = require('body-parser');
 const uuid        = require('uuid');
-const template    = require('../views/templates');
 const vhx         = require('vhx')(process.env.VHX_API_KEY);
+const template    = require('../views/templates');
+
 const app         = express();
 
 /* Express App
@@ -39,57 +40,50 @@ app.use(session({
 /* Routes
 ..................................... */
 app.get('/', function(req, res) {
-
-
-  let data = [];
-
   /* VHX > List Collections
   .....................................
-  a call to vhx.collections to get back our collections
-  http://dev.vhx.tv/docs/api/?javascript#collection-list
+  A call to vhx.collections to get back our collections.
+  http://dev.vhx.tv/docs/api/?node#collection-list
   ..................................... */
-  vhx.collections.all({}, function(err, all_collections) {
-
-    async.eachSeries(all_collections._embedded.collections, function(collection, iterator) {
-
-      /* VHX > List Collection Items
-      .....................................
-      We then interate over each collection and use its href to get
-      back our collection items. Using async's eachSeries method
-      allows us to do this sychronously until we trigger the next
-      iteration via the provided callback
-      http://dev.vhx.tv/docs/api/?javascript#collection-items-list
-      ..................................... */
-      vhx.collections.listItems({
-        collection: collection._links.self.href,
-        product: 'https://api.vhx.tv/products/14444'
-      }, function(err, items) {
-        data.push({
-          name: collection.name,
-          items: items._embedded.items
-        });
-        try {
-          return iterator();
-        } catch (e) {};        
-      });
+  vhx.collections.all({}, function(err, collections) {
+    collections._embedded.collections.map(function(item) {
+      item.items = new Array(item.items_count);
+    });
 
     /* DEMO > Complete Callback
-    .....................................
-    Render the collections data received back
-    from the series of VHX API calls into the
-    view using handlebars (see templates.js)
+    Render the collection data received back from the VHX API
+    call into the view using handlebars (see templates.js).
     ..................................... */
-    }, function() {
-      template(req, res, {
-        layout: 'layout',
-        yield: 'home/home',
-        data: {
-          collections: data
-        }
-      });
+    template(req, res, {
+      layout: 'layout',
+      yield: 'home/home',
+      data: {
+        collections: collections._embedded.collections
+      }
     });
   });
 
+});
+
+/* VHX > List Collection Items
+.....................................
+A call to vhx.collections.items to get back each collection's items
+http://dev.vhx.tv/docs/api/?node#collection-items-list
+
+This endpoint is called client-side for each collection row. A the
+partial with the rows items is returned as json.
+..................................... */
+app.get('/items.json', function(req, res) {
+  vhx.collections.items({
+    collection: req.query.id
+  }, function(err, items) {
+    template(req, res, {
+      partial: 'home/items',
+      data: {
+        items: items._embedded.items
+      }
+    });
+  });
 });
 
 app.post('/join', function(req, res) {

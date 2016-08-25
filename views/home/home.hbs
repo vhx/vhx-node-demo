@@ -16,16 +16,12 @@
 <section data-component="collections" class="padding-large">
   {{#each collections}}
     <h2 class="margin-left-medium padding-bottom-small head-2 border border--bottom">{{ name }}</h2>
-    <ul class="row padding-bottom-large">
+    <ul class="row padding-bottom-large" data-id="{{ id }}">
       {{#each items}}
       <li class="col small-1-1 medium-1-2 large-1-4 padding-medium" data-component="item">
-        <h3 class="head-3 margin-bottom-small truncate">{{ name }}</h3>
-        <a href="/watch/{{ id }}" class="ratio ratio--16-9" {{#unless ../../logged_in}}data-modal-open="join"{{/unless}}>
-          <img src="{{ thumbnail.medium }}" class="fill-width">
-        </a>
-        <div class="is-hidden">
-          {{ description }}
-        </div>
+        <h3 class="head-3 margin-bottom-small truncate">...</h3>
+        <span class="bg-maroon-transparent ratio ratio--16-9" {{#unless ../../logged_in}}data-modal-open="join"{{/unless}}>
+        </span>
       </li>
       {{/each}}
     </ul>

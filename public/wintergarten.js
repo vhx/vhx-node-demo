@@ -4,8 +4,23 @@ $(function() {
   var self = this;
 
   self.init = function() {
+    self.fetchRows();
     self.bindModals();
     self.bindForms();
+  };
+
+  self.fetchRows = function() {
+    $('[data-id]').each(function() {
+      var el =  $(this);
+      (function(el){
+        $.ajax({
+          url: 'items.json?id=' + el.data('id'),
+          method: 'GET'
+        }).done(function(data) {
+          $('[data-id=' + data.id +']').html(data.partial);
+        });
+      })(el);
+    });
   };
 
   self.bindForms = function() {
@@ -15,7 +30,7 @@ $(function() {
   };
 
   self.bindModals = function() {
-    $('[data-modal-open]').on('click', function(event) {
+    $(document).on('click', '[data-modal-open]', function(event) {
       var name = $(this).data('modal-open');
       var redirect = self.getRedirect($(this));
 
