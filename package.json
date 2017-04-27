@@ -4,9 +4,6 @@
   "description": "Node.js VHX Demo Site.",
   "author": "VHX",
   "readmeFilename": "README.md",
-  "engines": {
-    "node": "0.10.x"
-  },
   "dependencies": {
     "async": "^1.5.2",
     "body-parser": "1.x",
