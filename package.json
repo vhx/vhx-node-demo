@@ -9,6 +9,7 @@
     "autoprefixer": "^7.1.2",
     "body-parser": "1.x",
     "browser-sync": "^2.18.13",
+    "concurrently": "^3.5.0",
     "cookie-parser": "^1.4.1",
     "dotenv": "0.x",
     "express": "4.x",
@@ -28,7 +29,7 @@
     "vhx": "1.5.1"
   },
   "scripts": {
-    "start": "node core/app.js"
+    "start": "concurrently \"node core/app.js\" \"gulp watch\""
   },
   "main": "core/app.js"
 }

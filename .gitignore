@@ -7,3 +7,4 @@ public/.jshintrc
 .elasticbeanstalk
 .ebextensions
 server
+.sass-cache
