@@ -1,0 +1,60 @@
+/*
+
+The BorderColors() mixin is incredibly flexible.  Thus, some styles have been depreciated as they can be used with this mixin similarly.  Here are the styles that have been depreciated and their equivalent:
+
+
+DEPRECIATED							ALTERNATIVE
+.border--thick					Use BorderMixin() with heavier line weight.  .border--thick was 5px.
+.border--radius   			Use BorderMixin() with a specified radius.  .border--radius was 3px.
+.shadow 								Use .shadow--navy.
+*/
+
+.border {
+	&--all {
+		@include BorderMixin();
+	}
+
+	&--vertical {
+		@include BorderMixin('vertical', 1px, $gray-3, 0);
+	}
+
+	&--horizontal {
+		@include BorderMixin('horizontal', 1px, $gray-3, 0);
+	}
+
+	&--top {
+		@include BorderMixin('top', 1px, $gray-3, 0);
+	}
+
+	&--center {
+		@include BeforeBorderMixin(1px, $gray-3);
+	}
+
+	&--gray-light {
+		@include BeforeBorderMixin(1px, $gray-2);
+	}
+
+	&--white-transparent {
+		@include BeforeBorderMixin(1px, $white-transparent);
+	}
+
+	&--white {
+		@include BeforeBorderMixin(1px, $white);
+	}
+}
+
+.shadow {
+
+	&--navy {
+		@include BoxShadow();
+	}
+
+	&--black {
+		@include BoxShadow($black, 0.5);
+	}
+
+	&--gray {
+		@include BoxShadow($gray-3, 0.5);
+	}
+}
+

@@ -1,0 +1,70 @@
+// determines border position, size, color and border radius
+@mixin BorderMixin($position: all, $size: 1px, $color: $gray-3, $radius: 0) {
+	@if $position === vertical {
+		border-top: $size solid $color;
+		border-bottom: $size solid $color;
+		border-radius: $radius;
+	} @else if $position === horizontal {
+		border-left: $size solid $color;
+		border-right: $size solid $color;
+		border-radius: $radius;
+	} @else if $position === top {
+		border-top: $size solid $color;
+		border-radius: $radius;
+	} @else if $position === bottom {
+		border-bottom: $size solid $color;
+		border-radius: $radius;
+	} @else if $position === left {
+		border-left: $size solid $color;
+		border-radius: $radius;
+	} @else if $position === right {
+		border-right: $size solid $color;
+		border-radius: $radius;
+	} @else if $position === center {
+		z-index: 1;
+		position: relative;
+		border-radius: $radius;
+
+		&:before {
+			content: " ";
+			display: block;
+			height: $size;
+			top: 50%;
+			left: 0;
+			background-color: $color;
+			margin-top: -2px;
+			z-index: -1px;
+			position: absolute;
+			width: 100%;
+		}
+	} @else {
+		border: $size solid $color;
+		border-radius: $radius;
+	}
+}
+
+// determines border size and color.  This is for CENTER border only.
+@mixin BeforeBorderMixin($size: 1px, $color: $gray-3) {
+	z-index: 1;
+	position: relative;
+
+	&:before {
+		content: " ";
+		display: block;
+		height: $size;
+		top: 50%;
+		left: 0;
+		background-color: $color;
+		margin-top: calc(#{$size} * -2);
+		z-index: -1px;
+		position: absolute;
+		width: 100%;
+	}
+}
+
+//determines box shadow color and transparent percentage.
+@mixin BoxShadow($color: $navy, $percent: 0.5) {
+	box-shadow: 0 0 5px 0 transparentize($color, $percent);
+}
+
+
