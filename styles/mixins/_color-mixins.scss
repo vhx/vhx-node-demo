@@ -63,7 +63,7 @@
 }
 
 //determines box shadow color and transparent percentage.
-@mixin BoxShadow($color: $navy, $percent: 0.5) {
-	box-shadow: 0 0 5px 0 transparentize($color, $percent);
+@mixin BoxShadow($box-shade: $default-shadow, $color: $navy, $percent: 0.5) {
+	box-shadow: $box-shade transparentize($navy, $percent);
 }
 

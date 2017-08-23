@@ -69,7 +69,8 @@
     width: 100%; }
 
 .test-element__square-color-shadow {
-  box-shadow: 0 0 5px 0 rgba(255, 0, 0, 0.5); }
+  -webkit-box-shadow: 5px 5px 5px 5px rgba(0, 20, 43, 0.5);
+          box-shadow: 5px 5px 5px 5px rgba(0, 20, 43, 0.5); }
 
 /*
 
@@ -160,10 +161,15 @@ DEPRECIATED							ALTERNATIVE
     width: 100%; }
 
 .shadow--navy {
-  box-shadow: 0 0 5px 0 rgba(0, 20, 43, 0.5); }
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 20, 43, 0.5);
+          box-shadow: 0 0 5px 0 rgba(0, 20, 43, 0.5); }
 
 .shadow--black {
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5); }
+  -webkit-box-shadow: #000000 rgba(0, 20, 43, 0.5);
+          box-shadow: #000000 rgba(0, 20, 43, 0.5); }
 
 .shadow--gray {
-  box-shadow: 0 0 5px 0 rgba(215, 221, 225, 0.5); }
+  -webkit-box-shadow: #D7DDE1 rgba(0, 20, 43, 0.5);
+          box-shadow: #D7DDE1 rgba(0, 20, 43, 0.5); }
+
+/*# sourceMappingURL=index.css.map */
