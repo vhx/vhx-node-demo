@@ -1,26 +1,26 @@
 // determines border position, size, color and border radius
 @mixin BorderMixin($position: all, $size: 1px, $color: $gray-3, $radius: 0) {
-	@if $position === vertical {
+	@if $position == "vertical" {
 		border-top: $size solid $color;
 		border-bottom: $size solid $color;
 		border-radius: $radius;
-	} @else if $position === horizontal {
+	} @else if $position == "horizontal" {
 		border-left: $size solid $color;
 		border-right: $size solid $color;
 		border-radius: $radius;
-	} @else if $position === top {
+	} @else if $position == "top" {
 		border-top: $size solid $color;
 		border-radius: $radius;
-	} @else if $position === bottom {
+	} @else if $position == "bottom" {
 		border-bottom: $size solid $color;
 		border-radius: $radius;
-	} @else if $position === left {
+	} @else if $position == "left" {
 		border-left: $size solid $color;
 		border-radius: $radius;
-	} @else if $position === right {
+	} @else if $position == "right" {
 		border-right: $size solid $color;
 		border-radius: $radius;
-	} @else if $position === center {
+	} @else if $position == "center" {
 		z-index: 1;
 		position: relative;
 		border-radius: $radius;
@@ -66,5 +66,4 @@
 @mixin BoxShadow($color: $navy, $percent: 0.5) {
 	box-shadow: 0 0 5px 0 transparentize($color, $percent);
 }
-
 

@@ -1,4 +1,169 @@
-.class-name {
-  color: purple; }
+/* .....................................
+  Colors - Grays
+..................................... */
+/* .....................................
+  Colors - Teals
+..................................... */
+/* .....................................
+  Colors - Red
+..................................... */
+/* .....................................
+  Colors - Navy
+..................................... */
+/* .....................................
+  Colors - Brand Palette
+..................................... */
+/* .....................................
+  Colors - External Palette
+..................................... */
+/* .....................................
+  Fonts
+..................................... */
+/* .....................................
+  Sets
+..................................... */
+/* .....................................
+  Media Query Ranges
+..................................... */
+/*.....................................
+  HEADERS MIXINS
+......................................*/
+/* sizes
+......................................*/
+/*.....................................
+  Icon Sizes
+......................................*/
+.test-element__square, .test-element__square-color-border-large, .test-element__square-color-border-large--vertical, .test-element__square-color-border-large--center, .test-element__square-color-shadow {
+  width: 200px;
+  height: 200px;
+  background-color: #22B9B0;
+  display: inline-block;
+  margin: 0 10px; }
 
-/*# sourceMappingURL=index.css.map */
+.test-element__square, .test-element__square-color-border-large, .test-element__square-color-border-large--vertical, .test-element__square-color-border-large--center, .test-element__square-color-shadow {
+  text-align: center;
+  line-height: 200px; }
+
+.test-element__square-color-border-large {
+  border: 5px solid #00142B;
+  border-radius: 0; }
+
+.test-element__square-color-border-large--vertical {
+  border-top: 5px solid #00142B;
+  border-bottom: 5px solid #00142B;
+  border-radius: 0; }
+
+.test-element__square-color-border-large--center {
+  z-index: 1;
+  position: relative; }
+  .test-element__square-color-border-large--center:before {
+    content: " ";
+    display: block;
+    height: 5px;
+    top: 50%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: calc(5px * -2);
+    z-index: -1px;
+    position: absolute;
+    width: 100%; }
+
+.test-element__square-color-shadow {
+  box-shadow: 0 0 5px 0 rgba(255, 0, 0, 0.5); }
+
+/*
+
+The BorderColors() mixin is incredibly flexible.  Thus, some styles have been depreciated as they can be used with this mixin similarly.  Here are the styles that have been depreciated and their equivalent:
+
+
+DEPRECIATED							ALTERNATIVE
+.border--thick					Use BorderMixin() with heavier line weight.  .border--thick was 5px.
+.border--radius   			Use BorderMixin() with a specified radius.  .border--radius was 3px.
+.shadow 								Use .shadow--navy.
+*/
+.border--all {
+  border: 1px solid #D7DDE1;
+  border-radius: 0; }
+
+.border--vertical {
+  border-top: 1px solid #D7DDE1;
+  border-bottom: 1px solid #D7DDE1;
+  border-radius: 0; }
+
+.border--horizontal {
+  border-left: 1px solid #D7DDE1;
+  border-right: 1px solid #D7DDE1;
+  border-radius: 0; }
+
+.border--top {
+  border-top: 1px solid #D7DDE1;
+  border-radius: 0; }
+
+.border--center {
+  z-index: 1;
+  position: relative; }
+  .border--center:before {
+    content: " ";
+    display: block;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    background-color: #D7DDE1;
+    margin-top: calc(1px * -2);
+    z-index: -1px;
+    position: absolute;
+    width: 100%; }
+
+.border--gray-light {
+  z-index: 1;
+  position: relative; }
+  .border--gray-light:before {
+    content: " ";
+    display: block;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    background-color: #F0F2F4;
+    margin-top: calc(1px * -2);
+    z-index: -1px;
+    position: absolute;
+    width: 100%; }
+
+.border--white-transparent {
+  z-index: 1;
+  position: relative; }
+  .border--white-transparent:before {
+    content: " ";
+    display: block;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: calc(1px * -2);
+    z-index: -1px;
+    position: absolute;
+    width: 100%; }
+
+.border--white {
+  z-index: 1;
+  position: relative; }
+  .border--white:before {
+    content: " ";
+    display: block;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    background-color: #ffffff;
+    margin-top: calc(1px * -2);
+    z-index: -1px;
+    position: absolute;
+    width: 100%; }
+
+.shadow--navy {
+  box-shadow: 0 0 5px 0 rgba(0, 20, 43, 0.5); }
+
+.shadow--black {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5); }
+
+.shadow--gray {
+  box-shadow: 0 0 5px 0 rgba(215, 221, 225, 0.5); }

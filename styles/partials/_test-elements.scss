@@ -1,0 +1,40 @@
+.test-element {
+
+	&__square,
+	&__square-color-border-large,
+	&__square-color-border-large--vertical,
+	&__square-color-border-large--center,
+	&__square-color-shadow {
+		width: 200px;
+		height: 200px;
+		background-color: $teal-2;
+		display: inline-block;
+		margin: 0 10px;
+	}
+
+	&__square,
+	&__square-color-border-large,
+	&__square-color-border-large--vertical,
+	&__square-color-border-large--center,
+	&__square-color-shadow {
+		text-align: center;
+		line-height: 200px;
+	}
+
+	//border testing
+	&__square-color-border-large {
+		@include BorderMixin('all', 5px, $navy);
+	}
+
+	&__square-color-border-large--vertical {
+		@include BorderMixin('vertical', 5px, $navy);
+	}
+
+	&__square-color-border-large--center {
+		@include BeforeBorderMixin(5px, $white-transparent);
+	}
+
+	&__square-color-shadow {
+		@include BoxShadow(red, 0.5);
+	}
+}

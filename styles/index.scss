@@ -1,5 +1,9 @@
+// for all pages
 @import "variables";
+// Mixins based on components
 @import "mixins/color-mixins";
 
+@import "partials/test-elements";
 
+// components
 @import "partials/borders";
