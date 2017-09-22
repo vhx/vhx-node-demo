@@ -1,0 +1,28 @@
+//Button type mixin.  specify which size button that will be used, s/m/l.
+
+//todo:  refactor out the background size?
+
+@mixin DefaultButtonType($btn-size: "default"){
+  font-family: $font-helvetica-neue;
+  font-weight: 500;
+  @if $btn-size == "small" {
+    font-size: 14px;
+    letter-spacing: normal;
+    line-height: 28px;
+    background-size: 13px 13px;
+  } @else if $btn-size == "medium" {
+    line-height: 38px;
+    font-size: 14px;
+    letter-spacing: normal;
+    background-size: 15px 15px;
+  } @else if $btn-size == "large" {
+    line-height: 58px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background-size: 23px 23px;
+  } @else {
+    font-size: 14px;
+    letter-spacing: normal;
+  }
+}
+

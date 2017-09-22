@@ -38,4 +38,20 @@
 		$custom-shadow: 5px 5px 5px 5px;
 		@include BoxShadow($custom-shadow, $navy, 0.5);
 	}
+
+	//button testing
+	&__button-box {
+		width: 200px;
+		height: auto;
+		display: inline-block;
+		margin: 0 10px;
+	}
+
+	&__sample-button {
+		width: 200px;
+		height: auto;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
 }

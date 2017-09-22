@@ -1,0 +1,4 @@
+//this is the updated legacy version of a CSS transition.  Used for buttons only.
+@mixin ButtonBezier($points: $default-bezier, $time: 300ms) {
+  transition: border $time cubic-bezier($points), color $time cubic-bezier($points), opacity $time cubic-bezier($points), background-color $time cubic-bezier($points);
+}

@@ -2,8 +2,12 @@
 @import "variables";
 // Mixins based on components
 @import "mixins/color-mixins";
+@import "mixins/animations";
+@import "mixins/forms-mixins";
+@import "mixins/type-mixins";
 
 @import "partials/test-elements";
 
 // components
 @import "partials/borders";
+@import "partials/buttons";

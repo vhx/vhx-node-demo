@@ -1,0 +1,551 @@
+
+/* base
+......................................*/
+
+/*
+
+for reference:
+
+to keep things "simple", we are using sass maps for OOTB button options.  Please refer to this going forward, the mixin depends on it.
+
+The ButtonColors() mixin is incredibly flexible.  Thus, some styles have been depreciated as they can be used with this mixin similarly, and all colors have been "Vimeized".  Here are the styles that have been depreciated and their equivalent:
+
+
+DEPRECIATED             ALTERNATIVE
+.button--transparent    Use .button.  The default is transparent.
+.button--fill           the default width is 100%.
+
+*/
+.button {
+  $colors: (
+    background-color: transparent,
+    background-hover: transparent,
+    border-color: transparent,
+    border-hover: transparent,
+    text-color: $RegentGray,
+    text-hover: $RegentGray
+  );
+  @include ButtonColorMixin($colors);
+  @include ButtonDisplayMixin();
+  @include DefaultButtonType();
+  @include ButtonBezier();
+
+  &--gray {
+    $colors: (
+      background-color: $Porcelain,
+      background-hover: $SoutherlySky,
+      border-color: $SoutherlySky,
+      border-hover: $SoutherlySky,
+      text-color: $AstroGranite,
+      text-hover: $AstroGranite
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  &--blue {
+    $colors: (
+      background-color: $VimeoBlue,
+      background-hover: $VimeoBlue-Darkened,
+      border-color: $VimeoBlue,
+      border-hover: $VimeoBlue-Darkened,
+      text-color: $White,
+      text-hover: $White
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  &--red {
+    $colors: (
+      background-color: $SunsetOrange,
+      background-hover: $SunsetOrange-dk-10,
+      border-color: $SunsetOrange-dk-10,
+      border-hover: $SunsetOrange-dk-10,
+      text-color: $white,
+      text-hover: $white
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  &--purple {
+    $colors: (
+      background-color: $vhx-purple,
+      background-hover: $vhx-purple-dk-10,
+      border-color: $vhx-purple-dk-10,
+      border-hover: $vhx-purple,
+      text-color: $white,
+      text-hover: $white
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  &--green {
+    $colors: (
+      background-color: $vhx-green,
+      background-hover: $vhx-green-dk-10,
+      border-color: $vhx-green,
+      border-hover: $vhx-green-dk-10,
+      text-color: $white,
+      text-hover: $white
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  &--black {
+    $colors: (
+      background-color: $black-50,
+      background-hover: $black,
+      border-color: $white-60,
+      border-hover: $white,
+      text-color: $white-20,
+      text-hover: $white
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  &--white {
+    $colors: (
+      background-color: $white,
+      background-hover: $gray-2,
+      border-color: $gray-3,
+      border-hover: $gray-3,
+      text-color: $gray-6,
+      text-hover: $gray-6
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  // social media
+
+  &--facebook {
+    $colors: (
+      background-color: $facebook-blue,
+      background-hover: $facebook-blue-dk-10,
+      border-color: $facebook-blue-dk-10,
+      border-hover: $facebook-blue-dk-10,
+      text-color: $white,
+      text-hover: $white
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  &--twitter {
+    $colors: (
+      background-color: $twitter-blue,
+      background-hover: $twitter-blue-dk-10,
+      border-color: $twitter-blue-dk-10,
+      border-hover: $twitter-blue-dk-10,
+      text-color: $white,
+      text-hover: $white
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  &--tumblr {
+    $colors: (
+      background-color: $tumblr-blue,
+      background-hover: $tumblr-blue-dk-10,
+      border-color: $tumblr-blue-dk-10,
+      border-hover: $tumblr-blue-dk-10,
+      text-color: $white,
+      text-hover: $white
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  &--paypal {
+    $colors: (
+      background-color: $paypal-blue,
+      background-hover: $paypal-blue-dk-10,
+      border-color: $paypal-blue-dk-10,
+      border-hover: $paypal-blue-dk-10,
+      text-color: $white,
+      text-hover: $white
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  &--roku {
+    $colors: (
+      background-color: $roku-purple,
+      background-hover: $roku-purple-dk-10,
+      border-color: $roku-purple-dk-10,
+      border-hover: $roku-purple-dk-10,
+      text-color: $white,
+      text-hover: $white
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  //button block buttons
+
+  &__button-block--gray {
+    $colors: (
+      background-color: $Porcelain,
+      background-hover: $SoutherlySky,
+      border-color: $SoutherlySky,
+      border-hover: $SoutherlySky,
+      text-color: $AstroGranite,
+      text-hover: $AstroGranite
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin($width: 200px, $height: 40px, $btn-pad: 0 0 0 0);
+    @include DefaultButtonType();
+    @include ButtonBezier();
+    text-align: center;
+
+    &:first-of-type {
+      border-radius: 5px 0 0 5px !important;
+    }
+
+    &:nth-of-type(2) {
+      border-radius: 0 !important;
+    }
+
+    &:last-of-type {
+      border-radius: 0 5px 5px 0 !important;
+    }
+  }
+
+  &__button-block--blue {
+    $colors: (
+      background-color: $VimeoBlue,
+      background-hover: $VimeoBlue-Darkened,
+      border-color: $Foam,
+      border-hover: $VimeoBlue-Darkened,
+      text-color: $White,
+      text-hover: $White
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin($width: 200px, $height: 40px, $btn-pad: 0 0 0 0);
+    @include DefaultButtonType();
+    @include ButtonBezier();
+    text-align: center;
+
+    &:first-of-type {
+      border-radius: 5px 0 0 5px !important;
+    }
+
+    &:nth-of-type(2) {
+      border-radius: 0 !important;
+    }
+
+    &:last-of-type {
+      border-radius: 0 5px 5px 0 !important;
+    }
+  }
+
+
+  &__button-block--red {
+    $colors: (
+      background-color: $SunsetOrange,
+      background-hover: $SunsetOrange-dk-10,
+      border-color: $PalePink,
+      border-hover: $SunsetOrange,
+      text-color: $white,
+      text-hover: $white
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin($width: 200px, $height: 40px, $btn-pad: 0 0 0 0);
+    @include DefaultButtonType();
+    @include ButtonBezier();
+    text-align: center;
+
+    &:first-of-type {
+      border-radius: 5px 0 0 5px !important;
+    }
+
+    &:nth-of-type(2) {
+      border-radius: 0 !important;
+    }
+
+    &:last-of-type {
+      border-radius: 0 5px 5px 0 !important;
+    }
+  }
+
+  &__button-block--black {
+    $colors: (
+      background-color: $black-50,
+      background-hover: $black,
+      border-color: $white-60,
+      border-hover: $white,
+      text-color: $white-20,
+      text-hover: $white
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin($width: 200px, $height: 40px, $btn-pad: 0 0 0 0);
+    @include DefaultButtonType();
+    @include ButtonBezier();
+    text-align: center;
+
+    &:first-of-type {
+      border-radius: 5px 0 0 5px !important;
+    }
+
+    &:nth-of-type(2) {
+      border-radius: 0 !important;
+    }
+
+    &:last-of-type {
+      border-radius: 0 5px 5px 0 !important;
+    }
+  }
+
+  &__button-block--white {
+    $colors: (
+      background-color: $white,
+      background-hover: $Plaster,
+      border-color: $RegentGray,
+      border-hover: $RegentGray,
+      text-color: $RegentGray,
+      text-hover: $RegentGray
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin($width: 200px, $height: 40px, $btn-pad: 0 0 0 0);
+    @include DefaultButtonType();
+    @include ButtonBezier();
+    text-align: center;
+
+    &:first-of-type {
+      border-radius: 5px 0 0 5px !important;
+    }
+
+    &:nth-of-type(2) {
+      border-radius: 0 !important;
+    }
+
+    &:last-of-type {
+      border-radius: 0 5px 5px 0 !important;
+    }
+  }
+
+  //other
+
+  &--search {
+    $colors: (
+      background-color: transparent,
+      background-hover: transparent,
+      border-color: $RegentGray,
+      border-hover: $RegentGray,
+      text-color: $RegentGray,
+      text-hover: $RegentGray
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6IzAwYWRlZn0uc3Qxe2ZpbGw6IzFhMmUzYn08L3N0eWxlPjx0aXRsZT5pY29ucy11aS1zZXQgY29weTwvdGl0bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTE1LjIgMTcuNmM0LjQtMy4xIDUuNC05LjEgMi4zLTEzLjUtLjEtLjItLjMtLjQtLjQtLjZDMTMuOS0uMSA4LjUtLjkgNC40IDEuOGMtNCAyLjctNS40IDgtMy4yIDEyLjMgMi40IDQuNiA4IDYuNSAxMi43IDQuMy41LS4zLjktLjUgMS4zLS44em0tNS41LTEuOGMtMy4zIDAtNi0yLjctNi4xLTYuMSAwLTMuMyAyLjctNi4xIDYuMS02LjEgMy4zIDAgNi4xIDIuNyA2LjEgNi4xIDAgMy40LTIuNyA2LjEtNi4xIDYuMXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjIuNSAyMGwtNC43LTQuN2MyLjItMy4yIDIuNC03LjYgMC0xMUMxNS45IDEuNiAxMi45IDAgOS43IDAgNC40IDAgMCA0LjQgMCA5LjdjMCA1LjQgNC40IDkuNyA5LjcgOS43IDIgMCAzLjktLjYgNS41LTEuN2w0LjggNC43YzEuNSAxLjcgNC4xLS44IDIuNS0yLjR6bS04LjItMy42QzEwLjYgMTguOSA1LjYgMTggMyAxNC4zLjUgMTAuNiAxLjUgNS41IDUuMiAzYzEuMy0uOSAyLjktMS40IDQuNi0xLjQgNC41IDAgOC4xIDMuNiA4LjEgOC4xIDAgMi41LTEuMiA0LjktMy4yIDYuNWwtLjQuMnoiLz48L3N2Zz4=');
+
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-x: 95%;
+    background-position-y: 9px;
+  }
+
+  &--icon {
+    $colors: (
+      background-color: transparent,
+      background-hover: transparent,
+      border-color: transparent,
+      border-hover: transparent,
+      text-color: $RegentGray,
+      text-hover: $RegentGray
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
+  &--dropdown {
+    $colors: (
+      background-color: transparent,
+      background-hover: $Plaster,
+      border-color: $RegentGray,
+      border-hover: $RegentGray,
+      text-color: $RegentGray,
+      text-hover: $RegentGray
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6Izg2OTlhNn08L3N0eWxlPjx0aXRsZT5pY29ucy1hcnJvd3Mtc2V0IGNvcHk8L3RpdGxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMSAxNy40Yy4zLjMuOS4zIDEuMi0uMWw5LjUtOS4xYy4zLS4zLjMtLjggMC0xLjFsLTEtMWMtLjMtLjMtLjgtLjMtMS4yIDBsLTcuOSA3LjYtOC03LjZjLS4zLS4zLS44LS4zLTEuMiAwbC0xIDFjLS4zLjMtLjMuOCAwIDEuMWw5LjYgOS4yYzAtLjEgMCAwIDAgMHoiLz48L3N2Zz4=');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-x: 95%;
+    background-position-y: 9px;
+  }
+
+  &--dropdown-gray {
+    $colors: (
+      background-color: $Plaster,
+      background-hover: $Plaster,
+      border-color: $RegentGray,
+      border-hover: $RegentGray,
+      text-color: $RegentGray,
+      text-hover: $RegentGray
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6Izg2OTlhNn08L3N0eWxlPjx0aXRsZT5pY29ucy1hcnJvd3Mtc2V0IGNvcHk8L3RpdGxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMSAxNy40Yy4zLjMuOS4zIDEuMi0uMWw5LjUtOS4xYy4zLS4zLjMtLjggMC0xLjFsLTEtMWMtLjMtLjMtLjgtLjMtMS4yIDBsLTcuOSA3LjYtOC03LjZjLS4zLS4zLS44LS4zLTEuMiAwbC0xIDFjLS4zLjMtLjMuOCAwIDEuMWw5LjYgOS4yYzAtLjEgMCAwIDAgMHoiLz48L3N2Zz4=');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-x: 95%;
+    background-position-y: 9px;
+
+    &.is-processing {
+      span {
+        background: none;
+      }
+      &:hover {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%20%20viewBox%3D%220%200%2040%2040%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cpath%20opacity%3D%220.2%22%20fill%3D%22%23233741%22%20d%3D%22M20.201%2C5.169c-8.254%2C0-14.946%2C6.692-14.946%2C14.946c0%2C8.255%2C6.692%2C14.946%2C14.946%2C14.946%0D%0A%20%20s14.946-6.691%2C14.946-14.946C35.146%2C11.861%2C28.455%2C5.169%2C20.201%2C5.169z%20M20.201%2C31.749c-6.425%2C0-11.634-5.208-11.634-11.634%0D%0A%20%20c0-6.425%2C5.209-11.634%2C11.634-11.634c6.425%2C0%2C11.633%2C5.209%2C11.633%2C11.634C31.834%2C26.541%2C26.626%2C31.749%2C20.201%2C31.749z%22%2F%3E%0D%0A%3Cpath%20fill%3D%22%23233741%22%20d%3D%22M26.013%2C10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0%0D%0A%20%20C22.32%2C8.481%2C24.301%2C9.057%2C26.013%2C10.047z%22%3E%0D%0A%20%20%3CanimateTransform%20attributeType%3D%22xml%22%0D%0A%20%20%20%20attributeName%3D%22transform%22%0D%0A%20%20%20%20type%3D%22rotate%22%0D%0A%20%20%20%20from%3D%220%2020%2020%22%0D%0A%20%20%20%20to%3D%22360%2020%2020%22%0D%0A%20%20%20%20dur%3D%220.5s%22%0D%0A%20%20%20%20repeatCount%3D%22indefinite%22%2F%3E%0D%0A%20%20%3C%2Fpath%3E%0D%0A%3C%2Fsvg%3E");
+      }
+    }
+  }
+
+  &--dropdown-white {
+    $colors: (
+      background-color: transparent,
+      background-hover: transparent,
+      border-color: $RegentGray,
+      border-hover: $RegentGray,
+      text-color: $RegentGray,
+      text-hover: $RegentGray
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6Izg2OTlhNn08L3N0eWxlPjx0aXRsZT5pY29ucy1hcnJvd3Mtc2V0IGNvcHk8L3RpdGxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMSAxNy40Yy4zLjMuOS4zIDEuMi0uMWw5LjUtOS4xYy4zLS4zLjMtLjggMC0xLjFsLTEtMWMtLjMtLjMtLjgtLjMtMS4yIDBsLTcuOSA3LjYtOC03LjZjLS4zLS4zLS44LS4zLTEuMiAwbC0xIDFjLS4zLjMtLjMuOCAwIDEuMWw5LjYgOS4yYzAtLjEgMCAwIDAgMHoiLz48L3N2Zz4=');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-x: 95%;
+    background-position-y: 9px;
+
+    &.is-processing {
+      span {
+        background: none;
+      }
+      &:hover {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%20%20viewBox%3D%220%200%2040%2040%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cpath%20opacity%3D%220.2%22%20fill%3D%22%23233741%22%20d%3D%22M20.201%2C5.169c-8.254%2C0-14.946%2C6.692-14.946%2C14.946c0%2C8.255%2C6.692%2C14.946%2C14.946%2C14.946%0D%0A%20%20s14.946-6.691%2C14.946-14.946C35.146%2C11.861%2C28.455%2C5.169%2C20.201%2C5.169z%20M20.201%2C31.749c-6.425%2C0-11.634-5.208-11.634-11.634%0D%0A%20%20c0-6.425%2C5.209-11.634%2C11.634-11.634c6.425%2C0%2C11.633%2C5.209%2C11.633%2C11.634C31.834%2C26.541%2C26.626%2C31.749%2C20.201%2C31.749z%22%2F%3E%0D%0A%3Cpath%20fill%3D%22%23233741%22%20d%3D%22M26.013%2C10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0%0D%0A%20%20C22.32%2C8.481%2C24.301%2C9.057%2C26.013%2C10.047z%22%3E%0D%0A%20%20%3CanimateTransform%20attributeType%3D%22xml%22%0D%0A%20%20%20%20attributeName%3D%22transform%22%0D%0A%20%20%20%20type%3D%22rotate%22%0D%0A%20%20%20%20from%3D%220%2020%2020%22%0D%0A%20%20%20%20to%3D%22360%2020%2020%22%0D%0A%20%20%20%20dur%3D%220.5s%22%0D%0A%20%20%20%20repeatCount%3D%22indefinite%22%2F%3E%0D%0A%20%20%3C%2Fpath%3E%0D%0A%3C%2Fsvg%3E");
+      }
+    }
+  }
+
+  &--dropdown-blue {
+    $colors: (
+      background-color: $VimeoBlue,
+      background-hover: $VimeoBlue-Darkened,
+      border-color: $VimeoBlue,
+      border-hover: $VimeoBlue-Darkened,
+      text-color: $White,
+      text-hover: $White
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType();
+    @include ButtonBezier();
+
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6I2ZmZmZmZn08L3N0eWxlPjx0aXRsZT5pY29ucy1hcnJvd3Mtc2V0IGNvcHk8L3RpdGxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMSAxNy40Yy4zLjMuOS4zIDEuMi0uMWw5LjUtOS4xYy4zLS4zLjMtLjggMC0xLjFsLTEtMWMtLjMtLjMtLjgtLjMtMS4yIDBsLTcuOSA3LjYtOC03LjZjLS4zLS4zLS44LS4zLTEuMiAwbC0xIDFjLS4zLjMtLjMuOCAwIDEuMWw5LjYgOS4yYzAtLjEgMCAwIDAgMHoiLz48L3N2Zz4=');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position-x: 95%;
+    background-position-y: 9px;
+  }
+
+  &--icon-left {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6IzAwYWRlZn0uc3Qxe2ZpbGw6IzFhMmUzYn08L3N0eWxlPjx0aXRsZT5pY29ucy1zaW5nbGV0b25zPC90aXRsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNi40IDYuMmw1LjEtMi45IDUuMSAyLjktNS4xIDMuMXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTEuNS4yTDEuOSA1Ljd2MTEuNmw5LjYgNS41IDkuNi01LjVWNS43TDExLjUuMnptNy41IDZsLTcuNSA0LjVMNCA2LjJsNy41LTQuM0wxOSA2LjJ6TTMuMyA3LjRsNy41IDQuNXY4LjhsLTcuNS00LjN2LTl6bTguOSAxMy4zdi04LjhsNy41LTQuNXY5LjFsLTcuNSA0LjJ6Ii8+PC9zdmc+');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: left 10px center;
+    padding-left: 27px;
+    text-align: center;
+
+  }
+
+  &--icon-center {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6IzAwYWRlZn0uc3Qxe2ZpbGw6IzFhMmUzYn08L3N0eWxlPjx0aXRsZT5pY29ucy1zaW5nbGV0b25zPC90aXRsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNi40IDYuMmw1LjEtMi45IDUuMSAyLjktNS4xIDMuMXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTEuNS4yTDEuOSA1Ljd2MTEuNmw5LjYgNS41IDkuNi01LjVWNS43TDExLjUuMnptNy41IDZsLTcuNSA0LjVMNCA2LjJsNy41LTQuM0wxOSA2LjJ6TTMuMyA3LjRsNy41IDQuNXY4LjhsLTcuNS00LjN2LTl6bTguOSAxMy4zdi04LjhsNy41LTQuNXY5LjFsLTcuNSA0LjJ6Ii8+PC9zdmc+');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding: 0 20px !important;
+    background-position: center center !important;
+    width: 40px;
+  }
+
+  &--icon-right {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6IzAwYWRlZn0uc3Qxe2ZpbGw6IzFhMmUzYn08L3N0eWxlPjx0aXRsZT5pY29ucy1zaW5nbGV0b25zPC90aXRsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNi40IDYuMmw1LjEtMi45IDUuMSAyLjktNS4xIDMuMXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTEuNS4yTDEuOSA1Ljd2MTEuNmw5LjYgNS41IDkuNi01LjVWNS43TDExLjUuMnptNy41IDZsLTcuNSA0LjVMNCA2LjJsNy41LTQuM0wxOSA2LjJ6TTMuMyA3LjRsNy41IDQuNXY4LjhsLTcuNS00LjN2LTl6bTguOSAxMy4zdi04LjhsNy41LTQuNXY5LjFsLTcuNSA0LjJ6Ii8+PC9zdmc+');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right 10px center;
+    padding-right: 27px;
+    text-align: center;
+  }
+
+
+  &--icon-right-both {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6IzAwYWRlZn0uc3Qxe2ZpbGw6IzFhMmUzYn08L3N0eWxlPjx0aXRsZT5pY29ucy1zaW5nbGV0b25zPC90aXRsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNi40IDYuMmw1LjEtMi45IDUuMSAyLjktNS4xIDMuMXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTEuNS4yTDEuOSA1Ljd2MTEuNmw5LjYgNS41IDkuNi01LjVWNS43TDExLjUuMnptNy41IDZsLTcuNSA0LjVMNCA2LjJsNy41LTQuM0wxOSA2LjJ6TTMuMyA3LjRsNy41IDQuNXY4LjhsLTcuNS00LjN2LTl6bTguOSAxMy4zdi04LjhsNy41LTQuNXY5LjFsLTcuNSA0LjJ6Ii8+PC9zdmc+');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right 10px center;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+  }
+
+  &--no-pad {
+    padding: 0;
+  }
+
+}
+
+.button-block {
+  transition: all .2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
