@@ -233,7 +233,7 @@ DEPRECIATED             ALTERNATIVE
 */
 .button {
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 1px solid #8699a6;
   color: #8699a6;
   outline: none;
   border-radius: 5px;
@@ -252,12 +252,12 @@ DEPRECIATED             ALTERNATIVE
   transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
   .button:active, .button:hover, .button:focus {
     background-color: transparent;
-    border: 1px solid transparent;
+    border: 1px solid #8699a6;
     color: #8699a6;
     text-decoration: none; }
   .button:link, .button:visited {
     background-color: transparent;
-    border: 1px solid transparent;
+    border: 1px solid #8699a6;
     color: #8699a6;
     text-decoration: none; }
   .button--gray {
