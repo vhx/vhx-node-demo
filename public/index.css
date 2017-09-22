@@ -99,8 +99,7 @@
     width: 100%; }
 
 .test-element__square-color-shadow {
-  -webkit-box-shadow: 5px 5px 5px 5px rgba(0, 20, 43, 0.5);
-          box-shadow: 5px 5px 5px 5px rgba(0, 20, 43, 0.5); }
+  box-shadow: 5px 5px 5px 5px rgba(0, 20, 43, 0.5); }
 
 .test-element__button-box {
   width: 200px;
@@ -110,6 +109,20 @@
 
 .test-element__sample-button {
   width: 200px;
+  height: auto;
+  display: inline-block;
+  margin: 0;
+  padding: 0; }
+
+.test-element__sample-button--small {
+  width: 100px;
+  height: auto;
+  display: inline-block;
+  margin: 0;
+  padding: 0; }
+
+.test-element__sample-button--half {
+  width: 400px;
   height: auto;
   display: inline-block;
   margin: 0;
@@ -204,16 +217,13 @@ DEPRECIATED							ALTERNATIVE
     width: 100%; }
 
 .shadow--navy {
-  -webkit-box-shadow: 0 0 5px 0 rgba(0, 20, 43, 0.5);
-          box-shadow: 0 0 5px 0 rgba(0, 20, 43, 0.5); }
+  box-shadow: 0 0 5px 0 rgba(0, 20, 43, 0.5); }
 
 .shadow--black {
-  -webkit-box-shadow: #000000 rgba(0, 20, 43, 0.5);
-          box-shadow: #000000 rgba(0, 20, 43, 0.5); }
+  box-shadow: #000000 rgba(0, 20, 43, 0.5); }
 
 .shadow--gray {
-  -webkit-box-shadow: #D7DDE1 rgba(0, 20, 43, 0.5);
-          box-shadow: #D7DDE1 rgba(0, 20, 43, 0.5); }
+  box-shadow: #D7DDE1 rgba(0, 20, 43, 0.5); }
 
 /* base
 ......................................*/
@@ -229,6 +239,7 @@ The ButtonColors() mixin is incredibly flexible.  Thus, some styles have been de
 DEPRECIATED             ALTERNATIVE
 .button--transparent    Use .button.  The default is transparent.
 .button--fill           the default width is 100%.
+.button-block--[DIRECTION]  They are all now display block, sorry.
 
 */
 .button {
@@ -239,8 +250,7 @@ DEPRECIATED             ALTERNATIVE
   border-radius: 5px;
   display: inline-block;
   position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   height: 40px;
   padding: 0 20px;
@@ -248,7 +258,6 @@ DEPRECIATED             ALTERNATIVE
   font-weight: 500;
   font-size: 14px;
   letter-spacing: normal;
-  -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
   transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
   .button:active, .button:hover, .button:focus {
     background-color: transparent;
@@ -268,8 +277,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -277,7 +285,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--gray:active, .button--gray:hover, .button--gray:focus {
       background-color: #b3bfc8;
@@ -285,6 +292,120 @@ DEPRECIATED             ALTERNATIVE
       color: #1a2e3b;
       text-decoration: none; }
     .button--gray:link, .button--gray:visited {
+      background-color: #e3e8e9;
+      border: 1px solid #b3bfc8;
+      color: #1a2e3b;
+      text-decoration: none; }
+  .button__small--gray {
+    background-color: #e3e8e9;
+    border: 1px solid #b3bfc8;
+    color: #1a2e3b;
+    outline: none;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    padding: 0 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: normal;
+    line-height: 28px;
+    background-size: 13px 13px;
+    transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
+    .button__small--gray:active, .button__small--gray:hover, .button__small--gray:focus {
+      background-color: #b3bfc8;
+      border: 1px solid #b3bfc8;
+      color: #1a2e3b;
+      text-decoration: none; }
+    .button__small--gray:link, .button__small--gray:visited {
+      background-color: #e3e8e9;
+      border: 1px solid #b3bfc8;
+      color: #1a2e3b;
+      text-decoration: none; }
+  .button__medium--gray {
+    background-color: #e3e8e9;
+    border: 1px solid #b3bfc8;
+    color: #1a2e3b;
+    outline: none;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 38px;
+    font-size: 14px;
+    letter-spacing: normal;
+    background-size: 15px 15px;
+    transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
+    .button__medium--gray:active, .button__medium--gray:hover, .button__medium--gray:focus {
+      background-color: #b3bfc8;
+      border: 1px solid #b3bfc8;
+      color: #1a2e3b;
+      text-decoration: none; }
+    .button__medium--gray:link, .button__medium--gray:visited {
+      background-color: #e3e8e9;
+      border: 1px solid #b3bfc8;
+      color: #1a2e3b;
+      text-decoration: none; }
+  .button__large--gray {
+    background-color: #e3e8e9;
+    border: 1px solid #b3bfc8;
+    color: #1a2e3b;
+    outline: none;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 58px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background-size: 23px 23px;
+    transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
+    .button__large--gray:active, .button__large--gray:hover, .button__large--gray:focus {
+      background-color: #b3bfc8;
+      border: 1px solid #b3bfc8;
+      color: #1a2e3b;
+      text-decoration: none; }
+    .button__large--gray:link, .button__large--gray:visited {
+      background-color: #e3e8e9;
+      border: 1px solid #b3bfc8;
+      color: #1a2e3b;
+      text-decoration: none; }
+  .button__half--gray {
+    background-color: #e3e8e9;
+    border: 1px solid #b3bfc8;
+    color: #1a2e3b;
+    outline: none;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: normal;
+    transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
+    .button__half--gray:active, .button__half--gray:hover, .button__half--gray:focus {
+      background-color: #b3bfc8;
+      border: 1px solid #b3bfc8;
+      color: #1a2e3b;
+      text-decoration: none; }
+    .button__half--gray:link, .button__half--gray:visited {
       background-color: #e3e8e9;
       border: 1px solid #b3bfc8;
       color: #1a2e3b;
@@ -297,8 +418,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -306,7 +426,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--blue:active, .button--blue:hover, .button--blue:focus {
       background-color: #0088cc;
@@ -326,8 +445,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -335,7 +453,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--red:active, .button--red:hover, .button--red:focus {
       background-color: #ff1a1a;
@@ -355,8 +472,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -364,7 +480,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--purple:active, .button--purple:hover, .button--purple:focus {
       background-color: #552555;
@@ -384,8 +499,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -393,7 +507,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--green:active, .button--green:hover, .button--green:focus {
       background-color: #7c932b;
@@ -413,8 +526,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -422,7 +534,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--black:active, .button--black:hover, .button--black:focus {
       background-color: #000000;
@@ -442,8 +553,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -451,7 +561,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--white:active, .button--white:hover, .button--white:focus {
       background-color: #F0F2F4;
@@ -471,8 +580,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -480,7 +588,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--facebook:active, .button--facebook:hover, .button--facebook:focus {
       background-color: #2d4474;
@@ -500,8 +607,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -509,7 +615,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--twitter:active, .button--twitter:hover, .button--twitter:focus {
       background-color: #2795e9;
@@ -529,8 +634,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -538,7 +642,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--tumblr:active, .button--tumblr:hover, .button--tumblr:focus {
       background-color: #222d3c;
@@ -558,8 +661,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -567,7 +669,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--paypal:active, .button--paypal:hover, .button--paypal:focus {
       background-color: #002949;
@@ -587,8 +688,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -596,7 +696,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--roku:active, .button--roku:hover, .button--roku:focus {
       background-color: #4a206a;
@@ -616,8 +715,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 200px;
     height: 40px;
     padding: 0 0 0 0;
@@ -625,7 +723,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     text-align: center; }
     .button__button-block--gray:active, .button__button-block--gray:hover, .button__button-block--gray:focus {
@@ -652,8 +749,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 200px;
     height: 40px;
     padding: 0 0 0 0;
@@ -661,7 +757,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     text-align: center; }
     .button__button-block--blue:active, .button__button-block--blue:hover, .button__button-block--blue:focus {
@@ -688,8 +783,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 200px;
     height: 40px;
     padding: 0 0 0 0;
@@ -697,7 +791,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     text-align: center; }
     .button__button-block--red:active, .button__button-block--red:hover, .button__button-block--red:focus {
@@ -724,8 +817,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 200px;
     height: 40px;
     padding: 0 0 0 0;
@@ -733,7 +825,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     text-align: center; }
     .button__button-block--black:active, .button__button-block--black:hover, .button__button-block--black:focus {
@@ -760,8 +851,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 200px;
     height: 40px;
     padding: 0 0 0 0;
@@ -769,7 +859,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     text-align: center; }
     .button__button-block--white:active, .button__button-block--white:hover, .button__button-block--white:focus {
@@ -796,8 +885,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -805,7 +893,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6IzAwYWRlZn0uc3Qxe2ZpbGw6IzFhMmUzYn08L3N0eWxlPjx0aXRsZT5pY29ucy11aS1zZXQgY29weTwvdGl0bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTE1LjIgMTcuNmM0LjQtMy4xIDUuNC05LjEgMi4zLTEzLjUtLjEtLjItLjMtLjQtLjQtLjZDMTMuOS0uMSA4LjUtLjkgNC40IDEuOGMtNCAyLjctNS40IDgtMy4yIDEyLjMgMi40IDQuNiA4IDYuNSAxMi43IDQuMy41LS4zLjktLjUgMS4zLS44em0tNS41LTEuOGMtMy4zIDAtNi0yLjctNi4xLTYuMSAwLTMuMyAyLjctNi4xIDYuMS02LjEgMy4zIDAgNi4xIDIuNyA2LjEgNi4xIDAgMy40LTIuNyA2LjEtNi4xIDYuMXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjIuNSAyMGwtNC43LTQuN2MyLjItMy4yIDIuNC03LjYgMC0xMUMxNS45IDEuNiAxMi45IDAgOS43IDAgNC40IDAgMCA0LjQgMCA5LjdjMCA1LjQgNC40IDkuNyA5LjcgOS43IDIgMCAzLjktLjYgNS41LTEuN2w0LjggNC43YzEuNSAxLjcgNC4xLS44IDIuNS0yLjR6bS04LjItMy42QzEwLjYgMTguOSA1LjYgMTggMyAxNC4zLjUgMTAuNiAxLjUgNS41IDUuMiAzYzEuMy0uOSAyLjktMS40IDQuNi0xLjQgNC41IDAgOC4xIDMuNiA4LjEgOC4xIDAgMi41LTEuMiA0LjktMy4yIDYuNWwtLjQuMnoiLz48L3N2Zz4=");
     background-repeat: no-repeat;
@@ -830,8 +917,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -839,7 +925,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1); }
     .button--icon:active, .button--icon:hover, .button--icon:focus {
       background-color: transparent;
@@ -859,8 +944,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -868,7 +952,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6Izg2OTlhNn08L3N0eWxlPjx0aXRsZT5pY29ucy1hcnJvd3Mtc2V0IGNvcHk8L3RpdGxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMSAxNy40Yy4zLjMuOS4zIDEuMi0uMWw5LjUtOS4xYy4zLS4zLjMtLjggMC0xLjFsLTEtMWMtLjMtLjMtLjgtLjMtMS4yIDBsLTcuOSA3LjYtOC03LjZjLS4zLS4zLS44LS4zLTEuMiAwbC0xIDFjLS4zLjMtLjMuOCAwIDEuMWw5LjYgOS4yYzAtLjEgMCAwIDAgMHoiLz48L3N2Zz4=");
     background-repeat: no-repeat;
@@ -893,8 +976,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -902,7 +984,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6Izg2OTlhNn08L3N0eWxlPjx0aXRsZT5pY29ucy1hcnJvd3Mtc2V0IGNvcHk8L3RpdGxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMSAxNy40Yy4zLjMuOS4zIDEuMi0uMWw5LjUtOS4xYy4zLS4zLjMtLjggMC0xLjFsLTEtMWMtLjMtLjMtLjgtLjMtMS4yIDBsLTcuOSA3LjYtOC03LjZjLS4zLS4zLS44LS4zLTEuMiAwbC0xIDFjLS4zLjMtLjMuOCAwIDEuMWw5LjYgOS4yYzAtLjEgMCAwIDAgMHoiLz48L3N2Zz4=");
     background-repeat: no-repeat;
@@ -931,8 +1012,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -940,7 +1020,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6Izg2OTlhNn08L3N0eWxlPjx0aXRsZT5pY29ucy1hcnJvd3Mtc2V0IGNvcHk8L3RpdGxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMSAxNy40Yy4zLjMuOS4zIDEuMi0uMWw5LjUtOS4xYy4zLS4zLjMtLjggMC0xLjFsLTEtMWMtLjMtLjMtLjgtLjMtMS4yIDBsLTcuOSA3LjYtOC03LjZjLS4zLS4zLS44LS4zLTEuMiAwbC0xIDFjLS4zLjMtLjMuOCAwIDEuMWw5LjYgOS4yYzAtLjEgMCAwIDAgMHoiLz48L3N2Zz4=");
     background-repeat: no-repeat;
@@ -969,8 +1048,7 @@ DEPRECIATED             ALTERNATIVE
     border-radius: 5px;
     display: inline-block;
     position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
     padding: 0 20px;
@@ -978,7 +1056,6 @@ DEPRECIATED             ALTERNATIVE
     font-weight: 500;
     font-size: 14px;
     letter-spacing: normal;
-    -webkit-transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: border 300ms cubic-bezier(0.19, 1, 0.22, 1), color 300ms cubic-bezier(0.19, 1, 0.22, 1), opacity 300ms cubic-bezier(0.19, 1, 0.22, 1), background-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjMgMjMiPjxzdHlsZT4uc3Qwe2ZpbGw6I2ZmZmZmZn08L3N0eWxlPjx0aXRsZT5pY29ucy1hcnJvd3Mtc2V0IGNvcHk8L3RpdGxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMSAxNy40Yy4zLjMuOS4zIDEuMi0uMWw5LjUtOS4xYy4zLS4zLjMtLjggMC0xLjFsLTEtMWMtLjMtLjMtLjgtLjMtMS4yIDBsLTcuOSA3LjYtOC03LjZjLS4zLS4zLS44LS4zLTEuMiAwbC0xIDFjLS4zLjMtLjMuOCAwIDEuMWw5LjYgOS4yYzAtLjEgMCAwIDAgMHoiLz48L3N2Zz4=");
     background-repeat: no-repeat;
@@ -1029,17 +1106,8 @@ DEPRECIATED             ALTERNATIVE
     padding: 0; }
 
 .button-block {
-  -webkit-transition: all .2s ease;
   transition: all .2s ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   padding: 10px 0; }
-
-/*# sourceMappingURL=index.css.map */

@@ -14,6 +14,7 @@ The ButtonColors() mixin is incredibly flexible.  Thus, some styles have been de
 DEPRECIATED             ALTERNATIVE
 .button--transparent    Use .button.  The default is transparent.
 .button--fill           the default width is 100%.
+.button-block--[DIRECTION]  They are all now display block, sorry.
 
 */
 .button {
@@ -44,6 +45,68 @@ DEPRECIATED             ALTERNATIVE
     @include DefaultButtonType();
     @include ButtonBezier();
   }
+
+  &__small--gray {
+    $colors: (
+      background-color: $Porcelain,
+      background-hover: $SoutherlySky,
+      border-color: $SoutherlySky,
+      border-hover: $SoutherlySky,
+      text-color: $AstroGranite,
+      text-hover: $AstroGranite
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin($height: 30px, $btn-pad: 0 10px);
+    @include DefaultButtonType($btn-size: "small");
+    @include ButtonBezier();
+  }
+
+  &__medium--gray {
+    $colors: (
+      background-color: $Porcelain,
+      background-hover: $SoutherlySky,
+      border-color: $SoutherlySky,
+      border-hover: $SoutherlySky,
+      text-color: $AstroGranite,
+      text-hover: $AstroGranite
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin();
+    @include DefaultButtonType($btn-size: "medium");
+    @include ButtonBezier();
+  }
+
+  &__large--gray {
+    $colors: (
+      background-color: $Porcelain,
+      background-hover: $SoutherlySky,
+      border-color: $SoutherlySky,
+      border-hover: $SoutherlySky,
+      text-color: $AstroGranite,
+      text-hover: $AstroGranite
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin($height: 60px);
+    @include DefaultButtonType($btn-size: "large");
+    @include ButtonBezier();
+  }
+
+
+  &__half--gray {
+    $colors: (
+      background-color: $Porcelain,
+      background-hover: $SoutherlySky,
+      border-color: $SoutherlySky,
+      border-hover: $SoutherlySky,
+      text-color: $AstroGranite,
+      text-hover: $AstroGranite
+    );
+    @include ButtonColorMixin($colors);
+    @include ButtonDisplayMixin($type: 'half');
+    @include DefaultButtonType();
+    @include ButtonBezier();
+  }
+
 
   &--blue {
     $colors: (

@@ -54,4 +54,20 @@
 		margin: 0;
 		padding: 0;
 	}
+
+	&__sample-button--small {
+		width: 100px;
+		height: auto;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__sample-button--half {
+		width: 400px;
+		height: auto;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
 }
