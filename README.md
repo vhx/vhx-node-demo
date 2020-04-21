@@ -31,4 +31,4 @@ Once you have an account, you can get your [API Key here](https://www.vhx.tv/adm
 
 ## Developer Support
 
-Our developers are here to help with any implementation questions you might have. Get in touch with us via email at [api@vhx.tv](api@vhx.tv).
+Our developers are here to help with any implementation questions you might have. Please submit any questions [here](https://vimeoott.zendesk.com/hc/en-us/requests/new).
