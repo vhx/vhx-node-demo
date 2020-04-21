@@ -12,7 +12,7 @@
     "express": "4.x",
     "express-session": "1.x",
     "fs-walk": "0.0.1",
-    "handlebars": "^3.0.3",
+    "handlebars": "^4.7.6",
     "path": "^0.12.7",
     "randomstring": "^1.1.4",
     "underscore": "^1.8.3",
